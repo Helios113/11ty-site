@@ -1,41 +1,39 @@
 /* Monospace, suckless-inspired Sass */
-
-$font-stack: 'Courier New', Courier, monospace;
-$max-width: 720px;
-$spacing: 1.5rem;
-
 body {
-  font-family: $font-stack;
+  font-family: "Courier New", Courier, monospace;
   background: #fff;
   color: #000;
-  max-width: $max-width;
+  max-width: 720px;
   margin: auto;
-  padding: $spacing;
+  padding: 1.5rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
-  margin-top: $spacing;
+  margin-top: 1.5rem;
 }
 
 p, ul, ol, pre, blockquote {
-  margin-bottom: $spacing;
+  margin-bottom: 1.5rem;
 }
 
 a {
   color: #00f;
   text-decoration: underline;
 }
+a:hover {
+  color: #f00;
+}
 
 code, pre {
-  font-family: $font-stack;
+  font-family: "Courier New", Courier, monospace;
   background: #eee;
   padding: 0.2em 0.4em;
 }
 
 pre {
   overflow-x: auto;
-  padding: $spacing;
+  padding: 1.5rem;
 }
 
 ul, ol {
@@ -51,28 +49,26 @@ blockquote {
 hr {
   border: none;
   border-top: 1px solid #ccc;
-  margin: $spacing 0;
+  margin: 1.5rem 0;
 }
 
 @media (max-width: 768px) {
   body {
     padding: 1rem;
   }
-
   pre {
     font-size: 0.9em;
     padding: 1rem;
   }
 }
-
-a[aria-current="page"] {
+a[aria-current=page] {
   font-weight: bold;
   text-decoration: none;
 }
 
 nav ul {
   display: flex;
-  gap: 1.5rem; // space between links
+  gap: 1.5rem;
   list-style: none;
   padding: 0;
   margin-bottom: 2rem;
@@ -81,12 +77,13 @@ nav ul {
 nav a {
   text-decoration: none;
   color: #00f;
-
-  &[aria-current="page"] {
-    font-weight: bold;
-    text-decoration: underline;
-  }
-
+}
+nav a[aria-current=page] {
+  font-weight: bold;
+  text-decoration: underline;
+}
+nav a:hover {
+  color: #f00;
 }
 
 #links ul {
@@ -101,6 +98,9 @@ nav a {
 #links a {
   text-decoration: none;
   color: #00f;
+}
+#links a:hover {
+  color: #f00;
 }
 
 .sr-only {
@@ -138,3 +138,10 @@ nav a {
   color: white; /* Ensure the text is visible */
   box-shadow: 0 0 5px 2px rgba(0, 123, 255, 0.7); /* Optional: Focus effect */
 }
+
+/* Optional: Change background color on hover (just in case) */
+.skip-to-content:hover {
+  background-color: #0056b3;
+}
+
+/*# sourceMappingURL=styles.css.map */

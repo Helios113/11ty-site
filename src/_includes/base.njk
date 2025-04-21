@@ -9,13 +9,26 @@
   <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 </head>
 <body>
-  {% include "nav.njk" %}
+  <!-- Main navigation -->
+  <header>
+  <a href="#main" class="skip-to-content">Skip to content</a>
 
-  {{ content | safe }}
+    <nav aria-labelledby="main-navigation">
+      <h2 id="main-navigation" class="sr-only">Main Navigation</h2> <!-- Screen reader-only heading for navigation -->
+      {% include "nav.njk" %}
+    </nav>
+  </header>
 
+ <main id="main">
+    {{ content | safe }}
+  </main>
 
-  {% include "links.njk" %}
+  <!-- External links section -->
+  <section>
+    {% include "links.njk" %}
+  </section>
 
+  <!-- Footer -->
   <footer>
     <div>
       <p> {{ meta.siteName }}{% if meta.authorName %} • {{ meta.authorName }}{% endif %}</p>

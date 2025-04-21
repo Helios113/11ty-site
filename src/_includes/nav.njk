@@ -2,7 +2,7 @@
 
 <nav>
   <ul role="list">
-    {# Show "Home" link unless it's already part of collections.pages #}
+    <!-- Check if "Home" link is missing -->
     {% set hasHome = false %}
     {% for p in collections.pages %}
       {% if p.url == '/' %}
@@ -24,7 +24,8 @@
       <li>
         <a
           href="{{ p.url }}"
-          {% if currentUrl == p.url %}aria-current="page"{% endif %}>
+          {% if currentUrl == p.url %}aria-current="page"{% endif %}
+          title="{{ p.data.title }}">
           {{ p.data.title }}
         </a>
       </li>
