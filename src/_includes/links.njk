@@ -1,0 +1,16 @@
+<section id="links">
+  <ul role="list">
+    {% if meta.github %}
+      <li><a href="{{ meta.github }}" target="_blank" rel="noopener">GitHub</a></li>
+    {% endif %}
+    {% if meta.twitter %}
+      <li><a href="{{ meta.twitter }}" target="_blank" rel="noopener">Twitter</a></li>
+    {% endif %}
+    {% if meta.mastodon %}
+      <li><a href="{{ meta.mastodon }}" target="_blank" rel="me noopener">Mastodon</a></li>
+    {% endif %}
+    {% if meta.googleScholar %}
+      <li><a href="{{ meta.googleScholar }}" target="_blank" rel="noopener">Google Scholar</a></li>
+    {% endif %}
+  </ul>
+</section>

@@ -1,0 +1,24 @@
+{
+  "name": "webpage",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build:sass": "sass sass/main.scss dist/styles.css",
+    "watch:sass": "sass --watch sass/main.scss:dist/styles.css",
+    "build:eleventy": "eleventy",
+    "clean:css": "rm -f dist/styles.css",
+    "build": "npm run build:sass && npm run build:eleventy && npm run clean:css",
+    "dev": "npm run watch:sass & eleventy --serve"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "juice": "^11.0.1"
+  },
+  "devDependencies": {
+    "sass": "^1.86.3"
+  }
+}

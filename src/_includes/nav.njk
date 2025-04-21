@@ -1,0 +1,33 @@
+{% set currentUrl = page.url %}
+
+<nav>
+  <ul role="list">
+    {# Show "Home" link unless it's already part of collections.pages #}
+    {% set hasHome = false %}
+    {% for p in collections.pages %}
+      {% if p.url == '/' %}
+        {% set hasHome = true %}
+      {% endif %}
+    {% endfor %}
+
+    {% if not hasHome %}
+      <li>
+        <a
+          href="/"
+          {% if currentUrl == '/' %}aria-current="page"{% endif %}>
+          Home
+        </a>
+      </li>
+    {% endif %}
+
+    {% for p in collections.pages %}
+      <li>
+        <a
+          href="{{ p.url }}"
+          {% if currentUrl == p.url %}aria-current="page"{% endif %}>
+          {{ p.data.title }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</nav>

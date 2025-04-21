@@ -1,0 +1,115 @@
+/* Monospace, suckless-inspired Sass */
+
+$font-stack: 'Courier New', Courier, monospace;
+$max-width: 720px;
+$spacing: 1.5rem;
+
+body {
+  font-family: $font-stack;
+  background: #fff;
+  color: #000;
+  max-width: $max-width;
+  margin: auto;
+  padding: $spacing;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  margin-top: $spacing;
+}
+
+p, ul, ol, pre, blockquote {
+  margin-bottom: $spacing;
+}
+
+a {
+  color: #00f;
+  text-decoration: underline;
+
+  &:hover {
+    color: #f00;
+  }
+}
+
+code, pre {
+  font-family: $font-stack;
+  background: #eee;
+  padding: 0.2em 0.4em;
+}
+
+pre {
+  overflow-x: auto;
+  padding: $spacing;
+}
+
+ul, ol {
+  padding-left: 2em;
+}
+
+blockquote {
+  border-left: 2px solid #ccc;
+  padding-left: 1em;
+  color: #555;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: $spacing 0;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+
+  pre {
+    font-size: 0.9em;
+    padding: 1rem;
+  }
+}
+
+a[aria-current="page"] {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+nav ul {
+  display: flex;
+  gap: 1.5rem; // space between links
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #00f;
+
+  &[aria-current="page"] {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+
+  &:hover {
+    color: #f00;
+  }
+}
+
+#links ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0;
+  margin-top: 2rem;
+  list-style: none;
+}
+
+#links a {
+  text-decoration: none;
+  color: #00f;
+
+  &:hover {
+    color: #f00;
+  }
+}
