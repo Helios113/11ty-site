@@ -21,9 +21,6 @@ a {
   color: #00f;
   text-decoration: underline;
 }
-a:hover {
-  color: #f00;
-}
 
 code, pre {
   font-family: "Courier New", Courier, monospace;
@@ -82,9 +79,6 @@ nav a[aria-current=page] {
   font-weight: bold;
   text-decoration: underline;
 }
-nav a:hover {
-  color: #f00;
-}
 
 #links ul {
   display: flex;
@@ -98,9 +92,6 @@ nav a:hover {
 #links a {
   text-decoration: none;
   color: #00f;
-}
-#links a:hover {
-  color: #f00;
 }
 
 .sr-only {
@@ -137,11 +128,6 @@ nav a:hover {
   background-color: #007bff; /* Change background on focus */
   color: white; /* Ensure the text is visible */
   box-shadow: 0 0 5px 2px rgba(0, 123, 255, 0.7); /* Optional: Focus effect */
-}
-
-/* Optional: Change background color on hover (just in case) */
-.skip-to-content:hover {
-  background-color: #0056b3;
 }
 
 /*# sourceMappingURL=styles.css.map */
