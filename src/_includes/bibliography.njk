@@ -1,0 +1,44 @@
+---
+layout: base.njk
+---
+<header>
+  <h1>{{ title }}</h1>
+</header>
+<main>
+  <article>
+    {{ content | safe }}
+  </article>
+
+
+<h2>Papers</h2>
+<ul>
+  {% for entry in collections.papers %}
+    <li>
+      {{ entry.year }}.
+      {% if entry.url %}<a href="{{ entry.url }}">{{ entry.title }}</a>{% endif %}
+      {% if entry.note %} <em>{{ entry.note }}</em>{% endif %}
+    </li>
+  {% endfor %}
+</ul>
+
+<h2>Books</h2>
+<ul>
+  {% for entry in collections.books %}
+    <li>
+      {{ entry.year }}.
+      {% if entry.url %}<a href="{{ entry.url }}">{{ entry.title }}</a>{% endif %}
+    </li>
+  {% endfor %}
+</ul>
+
+<h2>Blog Articles</h2>
+<ul>
+  {% for entry in collections.articles %}
+    <li>
+      {{ entry.year }}.
+      {% if entry.url %}<a href="{{ entry.url }}">{{ entry.title }}</a>{% endif %}
+    </li>
+  {% endfor %}
+</ul>
+
+</main>

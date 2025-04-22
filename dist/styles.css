@@ -8,12 +8,21 @@ body {
   padding: 1.5rem;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: normal;
   margin-top: 1.5rem;
 }
 
-p, ul, ol, pre, blockquote {
+p,
+ul,
+ol,
+pre,
+blockquote {
   margin-bottom: 1.5rem;
 }
 
@@ -22,7 +31,8 @@ a {
   text-decoration: underline;
 }
 
-code, pre {
+code,
+pre {
   font-family: "Courier New", Courier, monospace;
   background: #eee;
   padding: 0.2em 0.4em;
@@ -33,7 +43,8 @@ pre {
   padding: 1.5rem;
 }
 
-ul, ol {
+ul,
+ol {
   padding-left: 2em;
 }
 
@@ -103,31 +114,6 @@ nav a[aria-current=page] {
   border: 0;
   clip: rect(0, 0, 0, 0);
   overflow: hidden;
-}
-
-/* Initially hide the skip link off-screen */
-.skip-to-content {
-  position: absolute;
-  top: -40px; /* Move off-screen */
-  left: 0;
-  background-color: #000; /* Dark background for visibility */
-  color: #fff; /* White text */
-  padding: 10px 15px;
-  font-size: 16px;
-  z-index: 1000;
-  transition: top 0.3s ease; /* Smooth transition when visible */
-  text-decoration: none; /* Remove underline */
-  border-radius: 4px;
-}
-
-/* When the skip link is focused, bring it into view */
-.skip-to-content:focus {
-  top: 10px; /* Move link into view */
-  left: 0;
-  outline: none; /* Remove the default outline */
-  background-color: #007bff; /* Change background on focus */
-  color: white; /* Ensure the text is visible */
-  box-shadow: 0 0 5px 2px rgba(0, 123, 255, 0.7); /* Optional: Focus effect */
 }
 
 /*# sourceMappingURL=styles.css.map */

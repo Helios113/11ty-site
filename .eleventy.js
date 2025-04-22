@@ -1,6 +1,7 @@
 const juice = require("juice");
 const fs = require("fs");
 const path = require("path");
+const bibtexParse = require("bibtex-parse-js");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addTransform("inline-css", async (content, outputPath) => {
@@ -29,6 +30,59 @@ module.exports = function (eleventyConfig) {
 
     return content;
   });
+
+  eleventyConfig.addCollection("papers", function () {
+    return getBibEntriesOfType("article");
+  });
+
+  eleventyConfig.addCollection("books", function () {
+    return getBibEntriesOfType("book");
+  });
+
+  eleventyConfig.addCollection("articles", function () {
+    // You can define this however you want: blog posts, misc web things, etc.
+    return getBibEntriesOfType("misc"); // or maybe "online", depending on your .bib
+  });
+
+  function getBibEntriesOfType(type) {
+    const bibPath = path.resolve("src/assets/bibliography.bib");
+
+    try {
+      if (!fs.existsSync(bibPath)) {
+        console.warn(`[bib-preprocessor] .bib file not found at ${bibPath}`);
+        return [];
+      }
+
+      const bibContent = fs.readFileSync(bibPath, "utf8");
+      const entries = bibtexParse.toJSON(bibContent);
+
+      if (!Array.isArray(entries)) {
+        throw new Error("Parsed BibTeX content is not an array.");
+      }
+
+      const parsed = entries.map((entry) => {
+        const fields = entry.entryTags || {};
+        return {
+          type: entry.entryType,
+          id: entry.citationKey,
+          title: fields.title,
+          year: parseInt(fields.year, 10),
+          author: fields.author,
+          journal: fields.journal,
+          booktitle: fields.booktitle,
+          url: fields.url,
+          note: fields.note,
+        };
+      });
+
+      return parsed
+        .filter((entry) => entry.type === type)
+        .sort((a, b) => b.year - a.year); // most recent first
+    } catch (err) {
+      console.error(`Error parsing bibliography for type "${type}":`, err);
+      return [];
+    }
+  }
 
   return {
     dir: {

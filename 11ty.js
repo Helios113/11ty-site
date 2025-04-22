@@ -1,40 +1,42 @@
-const juice = require("juice");
-const fs = require("fs");
-const path = require("path");
+const bibtexParse = require("bibtex-parse-js");
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addTransform("inline-css", async (content, outputPath) => {
-    if (outputPath && outputPath.endsWith(".html")) {
-      // Match all <link rel="stylesheet" href="..."> tags
-      const linkTagRegex =
-        /<link\s+rel=["']stylesheet["']\s+href=["']([^"']+)["']\s*\/?>/gi;
+  eleventyConfig.addCollection("bibliography", function () {
+    const bibPath = path.resolve("src/assets/bibliography.bib");
 
-      let combinedCSS = "";
+    try {
+      if (!fs.existsSync(bibPath)) {
+        console.warn(`[bib-preprocessor] .bib file not found at ${bibPath}`);
+        return [];
+      }
 
-      // Replace each link tag with nothing (we’ll inline instead)
-      content = await content.replace(linkTagRegex, (match, href) => {
-        // Resolve the path to the CSS file
-        const cssPath = path.resolve("dist", href); // adjust "dist" if your output dir differs
-        if (fs.existsSync(cssPath)) {
-          const css = fs.readFileSync(cssPath, "utf-8");
-          combinedCSS += css + "\n";
-        } else {
-          console.warn(`[inline-css] Warning: CSS file not found: ${cssPath}`);
-        }
-        return ""; // Remove the link tag — we’ll inline the styles
+      const bibContent = fs.readFileSync(bibPath, "utf8");
+      const entries = bibtexParse.toJSON(bibContent);
+
+      if (!Array.isArray(entries)) {
+        throw new Error("Parsed BibTeX content is not an array.");
+      }
+
+      const parsed = entries.map((entry) => {
+        const fields = entry.entryTags || {};
+        return {
+          type: entry.entryType,
+          id: entry.citationKey,
+          title: fields.title,
+          author: fields.author,
+          year: parseInt(fields.year, 10),
+          journal: fields.journal,
+          booktitle: fields.booktitle,
+          url: fields.url,
+          note: fields.note,
+        };
       });
 
-      // Inject combined styles into a <style> tag in the <head>
-      content = content.replace(
-        /<\/head>/i,
-        `<style>${combinedCSS}</style>\n</head>`,
-      );
-
-      // Inline the styles
-      return juice(content);
+      return parsed.sort((a, b) => b.year - a.year);
+    } catch (err) {
+      console.error("Error while parsing bibliography:", err);
+      return [];
     }
-
-    return content;
   });
 
   return {

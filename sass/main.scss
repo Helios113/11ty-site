@@ -1,140 +1,125 @@
 /* Monospace, suckless-inspired Sass */
 
-$font-stack: 'Courier New', Courier, monospace;
+$font-stack: "Courier New", Courier, monospace;
 $max-width: 720px;
 $spacing: 1.5rem;
 
 body {
-  font-family: $font-stack;
-  background: #fff;
-  color: #000;
-  max-width: $max-width;
-  margin: auto;
-  padding: $spacing;
+    font-family: $font-stack;
+    background: #fff;
+    color: #000;
+    max-width: $max-width;
+    margin: auto;
+    padding: $spacing;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-weight: normal;
-  margin-top: $spacing;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+    margin-top: $spacing;
 }
 
-p, ul, ol, pre, blockquote {
-  margin-bottom: $spacing;
+p,
+ul,
+ol,
+pre,
+blockquote {
+    margin-bottom: $spacing;
 }
 
 a {
-  color: #00f;
-  text-decoration: underline;
+    color: #00f;
+    text-decoration: underline;
 }
 
-code, pre {
-  font-family: $font-stack;
-  background: #eee;
-  padding: 0.2em 0.4em;
+code,
+pre {
+    font-family: $font-stack;
+    background: #eee;
+    padding: 0.2em 0.4em;
 }
 
 pre {
-  overflow-x: auto;
-  padding: $spacing;
+    overflow-x: auto;
+    padding: $spacing;
 }
 
-ul, ol {
-  padding-left: 2em;
+ul,
+ol {
+    padding-left: 2em;
 }
 
 blockquote {
-  border-left: 2px solid #ccc;
-  padding-left: 1em;
-  color: #555;
+    border-left: 2px solid #ccc;
+    padding-left: 1em;
+    color: #555;
 }
 
 hr {
-  border: none;
-  border-top: 1px solid #ccc;
-  margin: $spacing 0;
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: $spacing 0;
 }
 
 @media (max-width: 768px) {
-  body {
-    padding: 1rem;
-  }
+    body {
+        padding: 1rem;
+    }
 
-  pre {
-    font-size: 0.9em;
-    padding: 1rem;
-  }
+    pre {
+        font-size: 0.9em;
+        padding: 1rem;
+    }
 }
 
 a[aria-current="page"] {
-  font-weight: bold;
-  text-decoration: none;
+    font-weight: bold;
+    text-decoration: none;
 }
 
 nav ul {
-  display: flex;
-  gap: 1.5rem; // space between links
-  list-style: none;
-  padding: 0;
-  margin-bottom: 2rem;
+    display: flex;
+    gap: 1.5rem; // space between links
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
 }
 
 nav a {
-  text-decoration: none;
-  color: #00f;
+    text-decoration: none;
+    color: #00f;
 
-  &[aria-current="page"] {
-    font-weight: bold;
-    text-decoration: underline;
-  }
-
+    &[aria-current="page"] {
+        font-weight: bold;
+        text-decoration: underline;
+    }
 }
 
 #links ul {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  padding: 0;
-  margin-top: 2rem;
-  list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 0;
+    margin-top: 2rem;
+    list-style: none;
 }
 
 #links a {
-  text-decoration: none;
-  color: #00f;
+    text-decoration: none;
+    color: #00f;
 }
 
 .sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  border: 0;
-  clip: rect(0, 0, 0, 0);
-  overflow: hidden;
-}
-
-/* Initially hide the skip link off-screen */
-.skip-to-content {
-  position: absolute;
-  top: -40px; /* Move off-screen */
-  left: 0;
-  background-color: #000; /* Dark background for visibility */
-  color: #fff; /* White text */
-  padding: 10px 15px;
-  font-size: 16px;
-  z-index: 1000;
-  transition: top 0.3s ease; /* Smooth transition when visible */
-  text-decoration: none; /* Remove underline */
-  border-radius: 4px;
-}
-
-/* When the skip link is focused, bring it into view */
-.skip-to-content:focus {
-  top: 10px; /* Move link into view */
-  left: 0;
-  outline: none; /* Remove the default outline */
-  background-color: #007bff; /* Change background on focus */
-  color: white; /* Ensure the text is visible */
-  box-shadow: 0 0 5px 2px rgba(0, 123, 255, 0.7); /* Optional: Focus effect */
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    overflow: hidden;
 }
