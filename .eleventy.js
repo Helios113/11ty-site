@@ -72,12 +72,13 @@ module.exports = function (eleventyConfig) {
           booktitle: fields.booktitle,
           url: fields.url,
           note: fields.note,
+          section: fields.section || "Other" // <--- fallback here
         };
       });
 
       return parsed
         .filter((entry) => entry.type === type)
-        .sort((a, b) => b.year - a.year); // most recent first
+        .reverse()
     } catch (err) {
       console.error(`Error parsing bibliography for type "${type}":`, err);
       return [];

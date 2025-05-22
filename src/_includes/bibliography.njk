@@ -9,35 +9,104 @@ layout: base.njk
     {{ content | safe }}
   </article>
 
-<h2>Papers</h2>
-<ul>
-  {% for entry in collections.papers %}
-    <li>
-      {{ entry.year }}.
-      {% if entry.url %}<a href="{{ entry.url }}">{{ entry.title }}</a>{% endif %}
-      {% if entry.note %} <em>{{ entry.note }}</em>{% endif %}
-    </li>
-  {% endfor %}
-</ul>
+  <section>
+    <h2>Papers</h2>
+    {% for group, entries in collections.papers | groupby("section") %}
+      <section>
+        <h3>{{ group or "Other" }}</h3>
+        <ul>
+          {% for entry in entries %}
+            <li>
+              <strong>{{ entry.title }}</strong>
+              {% if entry.url %}
+                [<a href="{{ entry.url }}">link</a>]
+              {% endif %}
+              {% if entry.author %}
+                {%- set first_author = entry.author.split(' and')[0] | replace('{', '') | replace('}', '') -%}
+                {%- if ", " in first_author -%}
+                  {# Format: Surname, Firstname ... #}
+                  {%- set parts = first_author.split(", ") -%}
+                  {{ parts[0] }}, {{ parts[1][0] }}.
+                {%- elseif " " in first_author -%}
+                  {# Format: Firstname Surname ... #}
+                  {%- set parts = first_author.split(" ") -%}
+                  {{ parts[parts.length - 1] }}, {{ parts[0][0] }}.
+                {%- else -%}
+                  {{ first_author }}
+                {%- endif -%}
+              {% endif %}
+              {% if entry.year %} ({{ entry.year }}){% endif %}
+              {% if entry.note %} — <em>{{ entry.note }}</em>{% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      </section>
+    {% endfor %}
+  </section>
 
-<h2>Books</h2>
-<ul>
-  {% for entry in collections.books %}
-    <li>
-      {{ entry.year }}.
-      {% if entry.url %}<a href="{{ entry.url }}">{{ entry.title }}</a>{% endif %}
-    </li>
-  {% endfor %}
-</ul>
+  <section>
+    <h2>Books</h2>
+    {% for group, entries in collections.books | groupby("section") %}
+      <section>
+        <h3>{{ group or "Other" }}</h3>
+        <ul>
+          {% for entry in entries %}
+            <li>
+              <strong>{{ entry.title }}</strong>
+              {% if entry.url %}
+                [<a href="{{ entry.url }}">link</a>]
+              {% endif %}
+              {% if entry.author %}
+                {%- set first_author = entry.author.split(' and ')[0] | replace('{', '') | replace('}', '') -%}
+                {%- if ", " in first_author -%}
+                  {%- set parts = first_author.split(", ") -%}
+                  {{ parts[0] }}, {{ parts[1][0] }}.
+                {%- elseif " " in first_author -%}
+                  {%- set parts = first_author.split(" ") -%}
+                  {{ parts[parts.length - 1] }}, {{ parts[0][0] }}.
+                {%- else -%}
+                  {{ first_author }}
+                {%- endif -%}
+              {% endif %}
+              {% if entry.year %} ({{ entry.year }}){% endif %}
+              {% if entry.note %} — <em>{{ entry.note }}</em>{% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      </section>
+    {% endfor %}
+  </section>
 
-<h2>Blog Articles</h2>
-<ul>
-  {% for entry in collections.articles %}
-    <li>
-      {{ entry.year }}.
-      {% if entry.url %}<a href="{{ entry.url }}">{{ entry.title }}</a>{% endif %}
-    </li>
-  {% endfor %}
-</ul>
-
+  <section>
+    <h2>Blog Articles</h2>
+    {% for group, entries in collections.articles | groupby("section") %}
+      <section>
+        <h3>{{ group or "Other" }}</h3>
+        <ul>
+          {% for entry in entries %}
+            <li>
+              <strong>{{ entry.title }}</strong>
+              {% if entry.url %}
+                [<a href="{{ entry.url }}">link</a>]
+              {% endif %}
+              {% if entry.author %}
+                {%- set first_author = entry.author.split(' and ')[0] | replace('{', '') | replace('}', '') -%}
+                {%- if ", " in first_author -%}
+                  {%- set parts = first_author.split(", ") -%}
+                  {{ parts[0] }}, {{ parts[1][0] }}.
+                {%- elseif " " in first_author -%}
+                  {%- set parts = first_author.split(" ") -%}
+                  {{ parts[parts.length - 1] }}, {{ parts[0][0] }}.
+                {%- else -%}
+                  {{ first_author }}
+                {%- endif -%}
+              {% endif %}
+              {% if entry.year %} ({{ entry.year }}){% endif %}
+              {% if entry.note %} — <em>{{ entry.note }}</em>{% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      </section>
+    {% endfor %}
+  </section>
 </main>

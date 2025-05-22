@@ -3,23 +3,28 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build:sass": "sass sass/main.scss dist/styles.css",
-    "watch:sass": "sass --watch sass/main.scss:dist/styles.css",
+    "build:sass": "sass sass/main.scss:dist/styles.css",
+    "clean:css": "rm -f dist/*.css dist/*.css.map dist/*.scss",
     "build:eleventy": "eleventy",
-    "clean:css": "rm -f dist/styles.css",
     "build": "npm run build:sass && npm run build:eleventy && npm run clean:css",
-    "dev": "npm run watch:sass & eleventy --serve"
+    "serve": "eleventy --serve --port=8081",
+    "watch": "onchange 'src/**/*' 'sass/**/*' -- npm run build",
+    "dev": "npm-run-all --parallel serve build watch"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy": "^3.1.0",
     "bibtex-parse-js": "^0.0.24",
-    "juice": "^11.0.1"
+    "eleventy": "^1.0.7",
+    "juice": "^11.0.1",
+    "ws": "^8.18.2"
   },
   "devDependencies": {
+    "npm-run-all": "^4.1.5",
+    "onchange": "^7.1.0",
     "sass": "^1.86.3"
   }
 }
