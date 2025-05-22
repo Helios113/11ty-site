@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="height: 100%;">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-92JTV1EQK3"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -41,6 +41,14 @@
     padding: 1rem;
   }
 }
+#links {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
 #links ul {
   display: flex;
   flex-wrap: wrap;
@@ -55,12 +63,13 @@
 }
 </style>
 </head>
-<body style="font-family: 'Courier New', Courier, monospace; background: #fff; color: #000; max-width: 720px; margin: auto; padding: 1.5rem;">
-  <!-- Main navigation -->
-  <header>
-    <nav aria-labelledby="main-navigation" style="margin-bottom: 2rem; border-bottom: 1px solid #ccc;">
-      <h2 id="main-navigation" class="sr-only" style="font-weight: normal; margin-top: 1.5rem; position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; border: 0; clip: rect(0, 0, 0, 0); overflow: hidden;">Main Navigation</h2> <!-- Screen reader-only heading for navigation -->
-      
+<body style="font-family: 'Courier New', Courier, monospace; background: #fff; color: #000; max-width: 720px; margin-left: auto; margin-right: auto; padding: 1.5rem; height: auto;">
+  <div id="contents" style="display: flex; flex-direction: column; min-height: calc(100vh - 3rem); height: 100%;">
+    <!-- Main navigation -->
+    <header>
+      <nav aria-labelledby="main-navigation" style="margin-bottom: 2rem; border-bottom: 1px solid #ccc; height: 3rem;">
+        <h2 id="main-navigation" class="sr-only" style="font-weight: normal; margin-top: 1.5rem; position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; border: 0; clip: rect(0, 0, 0, 0); overflow: hidden;">Main Navigation</h2> <!-- Screen reader-only heading for navigation -->
+        
 
   <ul role="list" style="margin-bottom: 1.5rem; padding-left: 2em; display: flex; gap: 1.5rem; list-style: none; padding: 0;">
     <!-- Check if "Home" link is missing -->
@@ -102,15 +111,15 @@
     
   </ul>
 
-    </nav>
-  </header>
+      </nav>
+    </header>
 
- <main id="main">
-    
+    <main id="main" style="flex: 1 0 auto;">
+      
 <header>
   <h1 style="font-weight: normal; margin-top: 1.5rem;">CV</h1>
 </header>
-<main>
+<main style="flex: 1 0 auto;">
   <article>
     <p style="margin-bottom: 1.5rem;">This is the first page.</p>
 
@@ -119,12 +128,13 @@
 
 </main>
 
-  </main>
+    </main>
 
-  <!-- External links section -->
-  <section>
-    <section id="links">
-  <ul role="list" style="margin-bottom: 1.5rem; padding-left: 2em; display: flex; flex-wrap: wrap; gap: 1rem; padding: 0; margin-top: 2rem; list-style: none;">
+    <!-- Footer -->
+    <footer style="flex-shrink: 0; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid #ccc; color: #555; font-size: 0.95em; background: #f9f9f9;">
+      <div style="display: flex; align-items: center; justify-content: space-between;">
+        <section id="links" style="display: flex; gap: 1rem; align-items: center; margin: 0; padding: 0; list-style: none;">
+  <ul id="links" role="list" style="margin-bottom: 1.5rem; padding-left: 2em; flex-wrap: wrap; margin-top: 2rem; display: flex; gap: 1rem; align-items: center; margin: 0; padding: 0; list-style: none;">
     
       <li style="padding: 0.75em 0; margin: 0; border-bottom: none;"><a href="https://github.com/helios113" target="_blank" rel="noopener" style="text-decoration: none; color: #00f;">GitHub</a></li>
     
@@ -134,14 +144,9 @@
   </ul>
 </section>
 
-  </section>
-
-  <!-- Footer -->
-  <footer style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid #ccc; color: #555; font-size: 0.95em; background: #f9f9f9;">
-    <div>
-      <p style="margin-bottom: 1.5rem;"> • Preslav Aleksandrov</p>
-    </div>
-  </footer>
-
+        <span>Preslav Aleksandrov</span>
+      </div>
+    </footer>
+  </div>
 </body>
 </html>
