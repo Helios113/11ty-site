@@ -8,6 +8,49 @@ layout: base.njk
   <article>
     {{ content | safe }}
   </article>
-  <h2>Bibliography</h2>
-  <script src="https://bibbase.org/show?bib=https%3A%2F%2Fapi.zotero.org%2Fusers%2F15655889%2Fcollections%2FG6GP9ANU%2Fitems%3Fkey%3DMzHVK1tHvHTcC946y3GIaoco%26format%3Dbibtex%26limit%3D100&jsonp=1"></script>
- </main>
+
+  {% if collections.papers.length > 0 %}
+  <section>
+    <h2>Papers & Articles</h2>
+    <ul>
+      {% for entry in collections.papers %}
+      <li>
+        {% if entry.year %}({{ entry.year }}) {% endif %}<strong>{{ entry.title }}</strong>{% if entry.author %} — {{ entry.author | abbreviateAuthors }}{% endif %}
+        {% if entry.booktitle %}<br><em>{{ entry.booktitle | abbreviateVenue }}</em>{% endif %}
+        {% if entry.journal and not entry.booktitle %}<br><em>{{ entry.journal | abbreviateVenue }}</em>{% endif %}
+        {% if entry.url %}<br><a href="{{ entry.url }}" target="_blank">View paper</a>{% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
+  {% if collections.books.length > 0 %}
+  <section>
+    <h2>Books</h2>
+    <ul>
+      {% for entry in collections.books %}
+      <li>
+        {% if entry.year %}({{ entry.year }}) {% endif %}<strong>{{ entry.title }}</strong>{% if entry.author %} — {{ entry.author | abbreviateAuthors }}{% endif %}
+        {% if entry.url %}<br><a href="{{ entry.url }}" target="_blank">View book</a>{% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+
+  {% if collections.articles.length > 0 %}
+  <section>
+    <h2>Other Resources</h2>
+    <ul>
+      {% for entry in collections.articles %}
+      <li>
+        {% if entry.year %}({{ entry.year }}) {% endif %}<strong>{{ entry.title }}</strong>{% if entry.author %} — {{ entry.author | abbreviateAuthors }}{% endif %}
+        {% if entry.note %}<br>{{ entry.note }}{% endif %}
+        {% if entry.url %}<br><a href="{{ entry.url }}" target="_blank">View resource</a>{% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+</main>

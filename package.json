@@ -4,12 +4,14 @@
   "main": "index.js",
   "scripts": {
     "build:sass": "sass sass/main.scss:dist/styles.css",
+    "watch:sass": "onchange 'sass/**/*' -- npm run build:sass",
     "clean:css": "rm -f dist/*.css dist/*.css.map dist/*.scss",
     "build:eleventy": "eleventy",
-    "build": "npm run build:sass && npm run build:eleventy && npm run clean:css",
+    "build": "npm run update-venues && npm run build:sass && npm run build:eleventy && npm run clean:css",
     "serve": "eleventy --serve --port=8081",
     "watch": "onchange 'src/**/*' 'sass/**/*' -- npm run build",
-    "dev": "npm-run-all --parallel serve build watch"
+    "dev": "npm-run-all update-venues clean:css build:sass --parallel watch:sass serve",
+    "update-venues": "node scripts/update-venues-from-dblp.js"
   },
   "keywords": [],
   "author": "",
@@ -25,6 +27,7 @@
   "devDependencies": {
     "npm-run-all": "^4.1.5",
     "onchange": "^7.1.0",
-    "sass": "^1.86.3"
+    "sass": "^1.86.3",
+    "sharp": "^0.34.4"
   }
 }

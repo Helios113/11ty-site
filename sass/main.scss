@@ -1,6 +1,8 @@
-/* Monospace, suckless-inspired Sass */
+/* 80s retro-inspired Sass */
 
-$font-stack: "Courier New", Courier, monospace;
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@400;700&display=swap');
+
+$font-stack: "Press Start 2P", "Orbitron", monospace;
 $link-color: #00f;
 $max-width: 720px;
 $spacing: 1.5rem;
@@ -11,6 +13,8 @@ html {
 
 body {
   font-family: $font-stack;
+  font-size: 0.85rem;
+  line-height: 1.8;
   background: #fff;
   color: #000;
   max-width: $max-width;

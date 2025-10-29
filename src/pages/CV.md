@@ -2,10 +2,6 @@
 title: CV
 ---
 
-# Curriculum Vitae
-
-## Contact Information
-
 **Name:** Preslav Aleksandrov  
 **Email:** [pa511@cam.ac.uk](mailto:pa511@cam.ac.uk)  
 **Website:** [preslav.xyz](https://preslav.xyz)  

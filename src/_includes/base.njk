@@ -18,7 +18,7 @@
   <meta name="author" content="{{ meta.authorName }}">
   <meta name="keywords" content="PhD, Computer Science, Cambridge, {{ meta.siteName }}">
   <link rel="stylesheet" href="/styles.css" />
-  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <meta property="og:title" content="{{ title }}">
   <meta property="og:description" content="{{ meta.siteDescription }}">
   <meta property="og:type" content="website">
@@ -44,14 +44,6 @@
     <main id="main">
       {{ content | safe }}
     </main>
-
-    <!-- Footer -->
-    <footer>
-      <div style="display: flex; align-items: center; justify-content: space-between;">
-        {% include "links.njk" %}
-        <span>{{ meta.authorName }}</span>
-      </div>
-    </footer>
   </div>
 </body>
 </html>
