@@ -24,8 +24,7 @@ eleventyNavigation:
 </header>
 
 <section class="cv-section">
-  <h2>Research Interests</h2>
-  <p class="research-interests">Machine Learning | Deep Learning | Natural Language Processing | Computer Vision | Reinforcement Learning | AI Safety | Large Language Models | Generative AI | Multimodal Learning</p>
+  <h2>Abstract</h2>
 </section>
 
 <section class="cv-section">
@@ -33,11 +32,13 @@ eleventyNavigation:
   <div class="cv-item">
     <div class="cv-item-header">
       <h3>University of Cambridge</h3>
-      <span class="date">2024 - Current</span>
+      <span class="date">2024 -- Current</span>
     </div>
-    <div class="cv-subtitle">PhD in Computer Science, GPA: 3.9/4.0 | Cambridge, UK</div>
+    <div class="cv-subtitle">PhD in Computer Science | Cambridge, UK</div>
     <ul>
-      <li><strong>Relevant Coursework:</strong> Deep Learning, Machine Learning, Natural Language Processing, Computer Vision, Reinforcement Learning, Probabilistic Graphical Models, Advanced Algorithms, Statistical Learning Theory</li>
+      <li><strong>Novel Foundational Architectures:</strong> Deep Learning, Machine Learning, Natural Language Processing, Computer Vision, Reinforcement Learning, Probabilistic Graphical Models, Advanced Algorithms, Statistical Learning Theory</li>
+      <li><strong>Foundational Model Training:</strong> Dean's List (all semesters), Research Excellence Award, AI Research Fellowship</li>
+      <li><strong>Distributed Optimisation of Foundational models:</strong> Dean's List (all semesters), Research Excellence Award, AI Research Fellowship</li>
     </ul>
   </div>
   <div class="cv-item">
