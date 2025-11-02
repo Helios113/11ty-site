@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" style="height: 100%;">
+<html lang="en" style="height: 100%; font-size: 16px;">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-92JTV1EQK3"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -31,43 +31,109 @@
   <meta name="twitter:image" content="/path/to/your/image.jpg">
 
 <style>
+a:hover {
+  color: #1d4ed8;
+}
+nav ul a:hover {
+  color: #1f1f1f;
+}
 @media (max-width: 768px) {
   body {
-    padding: 1rem;
+    padding: 1.5rem 1rem;
+  }
+
+  h1 {
+    font-size: 1.875rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  nav ul {
+    gap: 1rem;
   }
 
   pre {
-    font-size: 0.9em;
+    font-size: 0.8125rem;
     padding: 1rem;
   }
 }
-#links {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  margin: 0;
-  padding: 0;
-  list-style: none;
+@media (max-width: 480px) {
+  body {
+    padding: 1rem 0.75rem;
+  }
+
+  h1 {
+    font-size: 1.625rem;
+  }
+
+  h2 {
+    font-size: 1.375rem;
+  }
 }
-#links ul {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  padding: 0;
-  margin-top: 2rem;
-  list-style: none;
+.blog-index .post-card:hover {
+  background: #f9fafb;
+  border-color: #e5e7eb;
+  transform: translateY(-1px);
+}
+@media (max-width: 768px) {
+  article.post .post-header h1 {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 480px) {
+  article.post .post-header h1 {
+    font-size: 1.75rem;
+  }
+
+  article.post .post-header .post-description {
+    font-size: 1rem;
+  }
+}
+.cv-container .cv-download-section .cv-download-btn:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+.cv-container .cv-download-section .cv-download-btn:active {
+  transform: translateY(0);
+}
+.cv-container .cv-header .contact-info .contact-item a:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+@media (max-width: 768px) {
+  .cv-container .cv-header h1 {
+    font-size: 2rem;
+  }
+
+  .cv-container .cv-header .contact-info {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .cv-container .cv-header .contact-info .contact-item {
+    justify-content: center;
+  }
+
+  .cv-container .cv-section .cv-item .cv-item-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
 }
 </style>
 </head>
-<body style="font-family: 'Press Start 2P', 'Orbitron', monospace; font-size: 0.85rem; line-height: 1.8; background: #fff; color: #000; max-width: 720px; margin-left: auto; margin-right: auto; padding: 1.5rem;">
-  <div id="contents" style="display: flex; flex-direction: column; min-height: calc(100vh - 3rem); height: 100%;">
+<body style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 1rem; line-height: 1.6; background: #ffffff; color: #1f1f1f; max-width: 760px; margin: 0 auto; padding: 2rem 1.5rem; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;">
+  <div id="contents" style="display: flex; flex-direction: column; min-height: 100vh;">
     <!-- Main navigation -->
     <header>
-      <nav aria-labelledby="main-navigation" style="margin-bottom: 2rem; border-bottom: 1px solid #ccc; height: 3rem;">
-        <h2 id="main-navigation" class="sr-only" style="font-weight: normal; margin-top: 1.5rem; position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; border: 0; clip: rect(0, 0, 0, 0); overflow: hidden;">Main Navigation</h2> <!-- Screen reader-only heading for navigation -->
+      <nav aria-labelledby="main-navigation" style="margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid #e5e7eb;">
+        <h2 id="main-navigation" class="sr-only" style="font-size: 1.75rem; font-weight: 600; line-height: 1.3; letter-spacing: -0.01em; color: #1f1f1f; position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; border: 0; clip: rect(0, 0, 0, 0); overflow: hidden;">Main Navigation</h2> <!-- Screen reader-only heading for navigation -->
         
 
-  <ul role="list" style="margin-bottom: 1.5rem; padding-left: 2em; margin: 0; display: flex; gap: 1.5rem; list-style: none; padding: 0;">
+  <ul role="list" style="padding-left: 2rem; color: #1f1f1f; list-style-type: disc; display: flex; gap: 2rem; list-style: none; padding: 0; margin: 0; flex-wrap: wrap;">
     <!-- Check if "Home" link is missing -->
     
     
@@ -77,37 +143,111 @@
     
       
     
+      
+    
 
     
-      <li style="margin: 0; border-bottom: none; padding: 0;">
-        <a href="/" style="color: #00f; text-decoration: none;">
+      <li style="margin-bottom: 0.75rem; line-height: 1.6; border-bottom: none; padding: 0; margin: 0;">
+        <a href="/" style="text-decoration: none; color: #6b7280; font-size: 0.9375rem; font-weight: 500; transition: color 0.15s ease;">
           Home
         </a>
       </li>
     
 
     
-      <li style="margin: 0; border-bottom: none; padding: 0;">
-        <a href="/CV/" title="CV" style="color: #00f; text-decoration: none;">
+    
+    
+    
+    
+      
+    
+      
+    
+      
+        
+      
+    
+      
+    
+    
+    
+    
+      
+    
+      
+    
+      
+    
+      
+        
+      
+    
+    
+    
+    
+      
+        
+      
+    
+      
+    
+      
+    
+      
+    
+    
+    
+    
+      
+    
+      
+        
+      
+    
+      
+    
+      
+    
+    
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+    
+      <li style="margin-bottom: 0.75rem; line-height: 1.6; border-bottom: none; padding: 0; margin: 0;">
+        <a href="/blog/" title="Blog" style="text-decoration: none; color: #6b7280; font-size: 0.9375rem; font-weight: 500; transition: color 0.15s ease;">
+          Blog
+        </a>
+      </li>
+    
+      <li style="margin-bottom: 0.75rem; line-height: 1.6; border-bottom: none; padding: 0; margin: 0;">
+        <a href="/CV/" title="CV" style="text-decoration: none; color: #6b7280; font-size: 0.9375rem; font-weight: 500; transition: color 0.15s ease;">
           CV
         </a>
       </li>
     
-      <li style="margin: 0; border-bottom: none; padding: 0;">
-        <a href="/projects/" title="Projects" style="color: #00f; text-decoration: none;">
+      <li style="margin-bottom: 0.75rem; line-height: 1.6; border-bottom: none; padding: 0; margin: 0;">
+        <a href="/projects/" title="Projects" style="text-decoration: none; color: #6b7280; font-size: 0.9375rem; font-weight: 500; transition: color 0.15s ease;">
           Projects
         </a>
       </li>
     
-      <li style="margin: 0; border-bottom: none; padding: 0;">
-        <a href="/bib/" aria-current="page" title="Reading" style="color: #00f; font-weight: bold; text-decoration: underline;">
+      <li style="margin-bottom: 0.75rem; line-height: 1.6; border-bottom: none; padding: 0; margin: 0;">
+        <a href="/bib/" aria-current="page" title="Reading" style="text-decoration: none; font-size: 0.9375rem; transition: color 0.15s ease; font-weight: 500; color: #1f1f1f;">
           Reading
         </a>
       </li>
     
 
-    <li style="margin: 0; border-bottom: none; padding: 0;">
-      <a href="https://github.com/Helios113" target="_blank" rel="noopener noreferrer" style="color: #00f; text-decoration: none;">
+    <li style="margin-bottom: 0.75rem; line-height: 1.6; border-bottom: none; padding: 0; margin: 0;">
+      <a href="https://github.com/Helios113" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #6b7280; font-size: 0.9375rem; font-weight: 500; transition: color 0.15s ease;">
         GitHub
       </a>
     </li>
@@ -117,139 +257,136 @@
     </header>
 
     <main id="main" style="flex: 1 0 auto;">
-      <header>
-  <h1 style="font-weight: normal; margin-top: 1.5rem;">Reading</h1>
-</header>
-<main style="flex: 1 0 auto;">
-  <article>
+      <main style="flex: 1 0 auto;">
+  <article style="max-width: 100%;">
     
   </article>
 
   
   <section>
-    <h2 style="font-weight: normal; margin-top: 1.5rem;">Papers & Articles</h2>
-    <ul style="margin-bottom: 1.5rem; padding-left: 2em; margin: 0;">
+    <h2 style="font-size: 1.75rem; font-weight: 600; line-height: 1.3; margin: 2rem 0 1rem; letter-spacing: -0.01em; color: #1f1f1f;">Papers & Articles</h2>
+    <ul style="margin: 1.5rem 0; padding-left: 2rem; color: #1f1f1f; list-style-type: disc;">
       
-      <li style="border-bottom: 1px solid #ccc; padding: 0.75em 0; margin: 0;">
-        (2025) <strong>Peri-LN: Revisiting Layer Normalization in the Transformer Architecture</strong> — Kim et al.
+      <li style="margin-bottom: 0.75rem; line-height: 1.6; border-bottom: none; padding: 0;">
+        (2025) <strong style="font-weight: 600; color: #1f1f1f;">Peri-LN: Revisiting Layer Normalization in the Transformer Architecture</strong> — Kim et al.
         
         
-        <br><a href="https://arxiv.org/abs/2502.02732" target="_blank" style="color: #00f; text-decoration: underline;">View paper</a>
+        <br><a href="https://arxiv.org/abs/2502.02732" target="_blank" style="color: #2563eb; text-decoration: none; transition: color 0.15s ease;">View paper</a>
       </li>
       
-      <li style="border-bottom: 1px solid #ccc; padding: 0.75em 0; margin: 0;">
-        (2019) <strong>Deep Equilibrium Models</strong> — Bai et al.
+      <li style="margin-bottom: 0.75rem; line-height: 1.6; border-bottom: none; padding: 0;">
+        (2019) <strong style="font-weight: 600; color: #1f1f1f;">Deep Equilibrium Models</strong> — Bai et al.
         
         
-        <br><a href="https://arxiv.org/abs/1909.01377" target="_blank" style="color: #00f; text-decoration: underline;">View paper</a>
+        <br><a href="https://arxiv.org/abs/1909.01377" target="_blank" style="color: #2563eb; text-decoration: none; transition: color 0.15s ease;">View paper</a>
       </li>
       
-      <li style="border-bottom: 1px solid #ccc; padding: 0.75em 0; margin: 0;">
-        (2023) <strong>Compact and Optimal Deep Learning with Recurrent Parameter Generators</strong> — Wang et al.
+      <li style="margin-bottom: 0.75rem; line-height: 1.6; border-bottom: none; padding: 0;">
+        (2023) <strong style="font-weight: 600; color: #1f1f1f;">Compact and Optimal Deep Learning with Recurrent Parameter Generators</strong> — Wang et al.
         <br><em>WACV</em>
         
-        <br><a href="https://doi.org/10.1109/WACV56688.2023.00389" target="_blank" style="color: #00f; text-decoration: underline;">View paper</a>
+        <br><a href="https://doi.org/10.1109/WACV56688.2023.00389" target="_blank" style="color: #2563eb; text-decoration: none; transition: color 0.15s ease;">View paper</a>
       </li>
       
-      <li style="border-bottom: 1px solid #ccc; padding: 0.75em 0; margin: 0;">
-        (2024) <strong>LLMCarbon: Modeling the End-to-End Carbon Footprint of Large Language
+      <li style="margin-bottom: 0.75rem; line-height: 1.6; border-bottom: none; padding: 0;">
+        (2024) <strong style="font-weight: 600; color: #1f1f1f;">LLMCarbon: Modeling the End-to-End Carbon Footprint of Large Language
                   Models</strong> — Faiz et al.
         <br><em>ICLR</em>
         
-        <br><a href="https://openreview.net/forum?id=aIok3ZD9to" target="_blank" style="color: #00f; text-decoration: underline;">View paper</a>
+        <br><a href="https://openreview.net/forum?id=aIok3ZD9to" target="_blank" style="color: #2563eb; text-decoration: none; transition: color 0.15s ease;">View paper</a>
       </li>
       
-      <li style="border-bottom: 1px solid #ccc; padding: 0.75em 0; margin: 0;">
-        (2024) <strong>The FineWeb Datasets: Decanting the Web for the Finest Text Data at
+      <li style="margin-bottom: 0.75rem; line-height: 1.6; border-bottom: none; padding: 0;">
+        (2024) <strong style="font-weight: 600; color: #1f1f1f;">The FineWeb Datasets: Decanting the Web for the Finest Text Data at
                   Scale</strong> — Penedo et al.
         <br><em>NEURIPS</em>
         
-        <br><a href="http://papers.nips.cc/paper&#92;_files/paper/2024/hash/370df50ccfdf8bde18f8f9c2d9151bda-Abstract-Datasets&#92;_and&#92;_Benchmarks&#92;_Track.html" target="_blank" style="color: #00f; text-decoration: underline;">View paper</a>
+        <br><a href="http://papers.nips.cc/paper&#92;_files/paper/2024/hash/370df50ccfdf8bde18f8f9c2d9151bda-Abstract-Datasets&#92;_and&#92;_Benchmarks&#92;_Track.html" target="_blank" style="color: #2563eb; text-decoration: none; transition: color 0.15s ease;">View paper</a>
       </li>
       
-      <li style="border-bottom: 1px solid #ccc; padding: 0.75em 0; margin: 0;">
-        (2025) <strong>SmolLM2: When Smol Goes Big - Data-Centric Training of a Small Language
+      <li style="margin-bottom: 0.75rem; line-height: 1.6; border-bottom: none; padding: 0;">
+        (2025) <strong style="font-weight: 600; color: #1f1f1f;">SmolLM2: When Smol Goes Big - Data-Centric Training of a Small Language
                   Model</strong> — Allal et al.
         
         <br><em>arXiv</em>
-        <br><a href="https://doi.org/10.48550/arXiv.2502.02737" target="_blank" style="color: #00f; text-decoration: underline;">View paper</a>
+        <br><a href="https://doi.org/10.48550/arXiv.2502.02737" target="_blank" style="color: #2563eb; text-decoration: none; transition: color 0.15s ease;">View paper</a>
       </li>
       
-      <li style="border-bottom: 1px solid #ccc; padding: 0.75em 0; margin: 0;">
-        (2024) <strong>DeepSeek-V3 Technical Report</strong> — DeepSeek{-}AI et al.
+      <li style="margin-bottom: 0.75rem; line-height: 1.6; border-bottom: none; padding: 0;">
+        (2024) <strong style="font-weight: 600; color: #1f1f1f;">DeepSeek-V3 Technical Report</strong> — DeepSeek{-}AI et al.
         
         <br><em>arXiv</em>
-        <br><a href="https://doi.org/10.48550/arXiv.2412.19437" target="_blank" style="color: #00f; text-decoration: underline;">View paper</a>
+        <br><a href="https://doi.org/10.48550/arXiv.2412.19437" target="_blank" style="color: #2563eb; text-decoration: none; transition: color 0.15s ease;">View paper</a>
       </li>
       
-      <li style="border-bottom: 1px solid #ccc; padding: 0.75em 0; margin: 0;">
-        (2020) <strong>Scaling Laws for Neural Language Models</strong> — Kaplan et al.
+      <li style="margin-bottom: 0.75rem; line-height: 1.6; border-bottom: none; padding: 0;">
+        (2020) <strong style="font-weight: 600; color: #1f1f1f;">Scaling Laws for Neural Language Models</strong> — Kaplan et al.
         
         <br><em>arXiv</em>
-        <br><a href="https://arxiv.org/abs/2001.08361" target="_blank" style="color: #00f; text-decoration: underline;">View paper</a>
+        <br><a href="https://arxiv.org/abs/2001.08361" target="_blank" style="color: #2563eb; text-decoration: none; transition: color 0.15s ease;">View paper</a>
       </li>
       
-      <li style="border-bottom: 1px solid #ccc; padding: 0.75em 0; margin: 0;">
-        (2022) <strong>Training Compute-Optimal Large Language Models</strong> — Hoffmann et al.
+      <li style="margin-bottom: 0.75rem; line-height: 1.6; border-bottom: none; padding: 0;">
+        (2022) <strong style="font-weight: 600; color: #1f1f1f;">Training Compute-Optimal Large Language Models</strong> — Hoffmann et al.
         
         <br><em>arXiv</em>
-        <br><a href="https://doi.org/10.48550/arXiv.2203.15556" target="_blank" style="color: #00f; text-decoration: underline;">View paper</a>
+        <br><a href="https://doi.org/10.48550/arXiv.2203.15556" target="_blank" style="color: #2563eb; text-decoration: none; transition: color 0.15s ease;">View paper</a>
       </li>
       
-      <li style="border-bottom: 1px solid #ccc; padding: 0.75em 0; margin: 0;">
-        (2021) <strong>Highly accurate protein structure prediction with {AlphaFold}</strong> — Jumper et al.
+      <li style="margin-bottom: 0.75rem; line-height: 1.6; border-bottom: none; padding: 0;">
+        (2021) <strong style="font-weight: 600; color: #1f1f1f;">Highly accurate protein structure prediction with {AlphaFold}</strong> — Jumper et al.
         
         <br><em>Nature</em>
-        <br><a href="https://doi.org/10.1038/s41586-021-03819-2" target="_blank" style="color: #00f; text-decoration: underline;">View paper</a>
+        <br><a href="https://doi.org/10.1038/s41586-021-03819-2" target="_blank" style="color: #2563eb; text-decoration: none; transition: color 0.15s ease;">View paper</a>
       </li>
       
-      <li style="border-bottom: 1px solid #ccc; padding: 0.75em 0; margin: 0;">
-        (2020) <strong>Denoising Diffusion Probabilistic Models</strong> — Ho et al.
+      <li style="margin-bottom: 0.75rem; line-height: 1.6; border-bottom: none; padding: 0;">
+        (2020) <strong style="font-weight: 600; color: #1f1f1f;">Denoising Diffusion Probabilistic Models</strong> — Ho et al.
         <br><em>NEURIPS</em>
         
-        <br><a href="https://proceedings.neurips.cc/paper/2020/hash/4c5bcfec8584af0d967f1ab10179ca4b-Abstract.html" target="_blank" style="color: #00f; text-decoration: underline;">View paper</a>
+        <br><a href="https://proceedings.neurips.cc/paper/2020/hash/4c5bcfec8584af0d967f1ab10179ca4b-Abstract.html" target="_blank" style="color: #2563eb; text-decoration: none; transition: color 0.15s ease;">View paper</a>
       </li>
       
-      <li style="border-bottom: 1px solid #ccc; padding: 0.75em 0; margin: 0;">
-        (2017) <strong>Attention is All you Need</strong> — Vaswani et al.
+      <li style="margin-bottom: 0.75rem; line-height: 1.6; border-bottom: none; padding: 0;">
+        (2017) <strong style="font-weight: 600; color: #1f1f1f;">Attention is All you Need</strong> — Vaswani et al.
         <br><em>Advances in Neural Information Processing Systems ...</em>
         
-        <br><a href="https://proceedings.neurips.cc/paper/2017/hash/3f5ee243547dee91fbd053c1c4a845aa-Abstract.html" target="_blank" style="color: #00f; text-decoration: underline;">View paper</a>
+        <br><a href="https://proceedings.neurips.cc/paper/2017/hash/3f5ee243547dee91fbd053c1c4a845aa-Abstract.html" target="_blank" style="color: #2563eb; text-decoration: none; transition: color 0.15s ease;">View paper</a>
       </li>
       
-      <li style="border-bottom: 1px solid #ccc; padding: 0.75em 0; margin: 0;">
-        (2022) <strong>Sliced Recursive Transformer</strong> — Shen et al.
+      <li style="margin-bottom: 0.75rem; line-height: 1.6; border-bottom: none; padding: 0;">
+        (2022) <strong style="font-weight: 600; color: #1f1f1f;">Sliced Recursive Transformer</strong> — Shen et al.
         <br><em>ECCV</em>
         
-        <br><a href="https://doi.org/10.1007/978-3-031-20053-3&#92;_42" target="_blank" style="color: #00f; text-decoration: underline;">View paper</a>
+        <br><a href="https://doi.org/10.1007/978-3-031-20053-3&#92;_42" target="_blank" style="color: #2563eb; text-decoration: none; transition: color 0.15s ease;">View paper</a>
       </li>
       
-      <li style="border-bottom: 1px solid #ccc; padding: 0.75em 0; margin: 0;">
-        (2023) <strong>Looped Transformers as Programmable Computers</strong> — Giannou et al.
+      <li style="margin-bottom: 0.75rem; line-height: 1.6; border-bottom: none; padding: 0;">
+        (2023) <strong style="font-weight: 600; color: #1f1f1f;">Looped Transformers as Programmable Computers</strong> — Giannou et al.
         <br><em>ICML</em>
         
-        <br><a href="https://proceedings.mlr.press/v202/giannou23a.html" target="_blank" style="color: #00f; text-decoration: underline;">View paper</a>
+        <br><a href="https://proceedings.mlr.press/v202/giannou23a.html" target="_blank" style="color: #2563eb; text-decoration: none; transition: color 0.15s ease;">View paper</a>
       </li>
       
-      <li style="border-bottom: 1px solid #ccc; padding: 0.75em 0; margin: 0;">
-        (2019) <strong>Universal Transformers</strong> — Dehghani et al.
+      <li style="margin-bottom: 0.75rem; line-height: 1.6; border-bottom: none; padding: 0;">
+        (2019) <strong style="font-weight: 600; color: #1f1f1f;">Universal Transformers</strong> — Dehghani et al.
         <br><em>ICLR</em>
         
-        <br><a href="https://openreview.net/forum?id=HyzdRiR9Y7" target="_blank" style="color: #00f; text-decoration: underline;">View paper</a>
+        <br><a href="https://openreview.net/forum?id=HyzdRiR9Y7" target="_blank" style="color: #2563eb; text-decoration: none; transition: color 0.15s ease;">View paper</a>
       </li>
       
-      <li style="border-bottom: 1px solid #ccc; padding: 0.75em 0; margin: 0;">
-        (2024) <strong>Looped Transformers are Better at Learning Learning Algorithms</strong> — Yang et al.
+      <li style="margin-bottom: 0.75rem; line-height: 1.6; border-bottom: none; padding: 0;">
+        (2024) <strong style="font-weight: 600; color: #1f1f1f;">Looped Transformers are Better at Learning Learning Algorithms</strong> — Yang et al.
         <br><em>ICLR</em>
         
-        <br><a href="https://openreview.net/forum?id=HHbRxoDTxE" target="_blank" style="color: #00f; text-decoration: underline;">View paper</a>
+        <br><a href="https://openreview.net/forum?id=HHbRxoDTxE" target="_blank" style="color: #2563eb; text-decoration: none; transition: color 0.15s ease;">View paper</a>
       </li>
       
-      <li style="padding: 0.75em 0; margin: 0; border-bottom: none;">
-        (2019) <strong>Language Models are Unsupervised Multitask Learners</strong> — Radford et al.
+      <li style="margin-bottom: 0.75rem; line-height: 1.6; border-bottom: none; padding: 0;">
+        (2019) <strong style="font-weight: 600; color: #1f1f1f;">Language Models are Unsupervised Multitask Learners</strong> — Radford et al.
         
         <br><em>OpenAI</em>
-        <br><a href="https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf" target="_blank" style="color: #00f; text-decoration: underline;">View paper</a>
+        <br><a href="https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf" target="_blank" style="color: #2563eb; text-decoration: none; transition: color 0.15s ease;">View paper</a>
       </li>
       
     </ul>
@@ -258,12 +395,12 @@
 
   
   <section>
-    <h2 style="font-weight: normal; margin-top: 1.5rem;">Books</h2>
-    <ul style="margin-bottom: 1.5rem; padding-left: 2em; margin: 0;">
+    <h2 style="font-size: 1.75rem; font-weight: 600; line-height: 1.3; margin: 2rem 0 1rem; letter-spacing: -0.01em; color: #1f1f1f;">Books</h2>
+    <ul style="margin: 1.5rem 0; padding-left: 2rem; color: #1f1f1f; list-style-type: disc;">
       
-      <li style="padding: 0.75em 0; margin: 0; border-bottom: none;">
-        (2013) <strong>The Meaning of Marriage: Facing the Complexities of Commitment with the Wisdom of God</strong> — Keller, Timothy and Keller, Kathy
-        <br><a href="https://www.google.co.uk/books/edition/The_Meaning_of_Marriage/g47aCwAAQBAJ?hl=en" target="_blank" style="color: #00f; text-decoration: underline;">View book</a>
+      <li style="margin-bottom: 0.75rem; line-height: 1.6; border-bottom: none; padding: 0;">
+        (2013) <strong style="font-weight: 600; color: #1f1f1f;">The Meaning of Marriage: Facing the Complexities of Commitment with the Wisdom of God</strong> — Keller, Timothy and Keller, Kathy
+        <br><a href="https://www.google.co.uk/books/edition/The_Meaning_of_Marriage/g47aCwAAQBAJ?hl=en" target="_blank" style="color: #2563eb; text-decoration: none; transition: color 0.15s ease;">View book</a>
       </li>
       
     </ul>

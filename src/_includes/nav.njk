@@ -19,7 +19,45 @@
       </li>
     {% endif %}
 
+    {# Create ordered navigation manually #}
+    {% set navPages = [] %}
+    
+    {# Order 1: Blog #}
     {% for p in collections.pages %}
+      {% if p.data.eleventyNavigation and p.data.eleventyNavigation.order == 1 %}
+        {% set navPages = (navPages.push(p), navPages) %}
+      {% endif %}
+    {% endfor %}
+    
+    {# Order 2: CV #}
+    {% for p in collections.pages %}
+      {% if p.data.eleventyNavigation and p.data.eleventyNavigation.order == 2 %}
+        {% set navPages = (navPages.push(p), navPages) %}
+      {% endif %}
+    {% endfor %}
+    
+    {# Order 3: Projects #}
+    {% for p in collections.pages %}
+      {% if p.data.eleventyNavigation and p.data.eleventyNavigation.order == 3 %}
+        {% set navPages = (navPages.push(p), navPages) %}
+      {% endif %}
+    {% endfor %}
+    
+    {# Order 4: Reading #}
+    {% for p in collections.pages %}
+      {% if p.data.eleventyNavigation and p.data.eleventyNavigation.order == 4 %}
+        {% set navPages = (navPages.push(p), navPages) %}
+      {% endif %}
+    {% endfor %}
+    
+    {# Pages without order #}
+    {% for p in collections.pages %}
+      {% if not p.data.eleventyNavigation or not p.data.eleventyNavigation.order %}
+        {% set navPages = (navPages.push(p), navPages) %}
+      {% endif %}
+    {% endfor %}
+    
+    {% for p in navPages %}
       <li>
         <a
           href="{{ p.url }}"

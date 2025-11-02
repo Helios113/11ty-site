@@ -4,13 +4,15 @@
   "main": "index.js",
   "scripts": {
     "build:sass": "sass sass/main.scss:dist/styles.css",
+    "build:cv": "node scripts/build-cv.js",
     "watch:sass": "onchange 'sass/**/*' -- npm run build:sass",
+    "watch:cv": "onchange 'src/assets/cv.tex' -- npm run build:cv",
     "clean:css": "rm -f dist/*.css dist/*.css.map dist/*.scss",
     "build:eleventy": "eleventy",
-    "build": "npm run update-venues && npm run build:sass && npm run build:eleventy && npm run clean:css",
+    "build": "npm run update-venues && npm run build:cv && npm run build:sass && npm run build:eleventy && npm run clean:css",
     "serve": "eleventy --serve --port=8081",
     "watch": "onchange 'src/**/*' 'sass/**/*' -- npm run build",
-    "dev": "npm-run-all update-venues clean:css build:sass --parallel watch:sass serve",
+    "dev": "npm-run-all update-venues clean:css build:cv build:sass --parallel watch:sass watch:cv serve",
     "update-venues": "node scripts/update-venues-from-dblp.js"
   },
   "keywords": [],

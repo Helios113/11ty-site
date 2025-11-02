@@ -1,0 +1,193 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{fontawesome5}
+
+% Define colors
+\definecolor{accentcolor}{RGB}{0,102,204}
+\definecolor{textcolor}{RGB}{40,40,40}
+
+% Hyperlink setup
+\hypersetup{
+    colorlinks=true,
+    linkcolor=accentcolor,
+    urlcolor=accentcolor,
+    pdftitle={Research Intern CV},
+    pdfauthor={Your Name}
+}
+
+% Section formatting
+\titleformat{\section}
+  {\Large\bfseries\color{accentcolor}}
+  {}{0em}{}[\titlerule]
+
+\titlespacing*{\section}{0pt}{12pt}{6pt}
+
+% Custom commands
+\newcommand{\cvitem}[2]{
+  \textbf{#1} \hfill #2
+}
+
+\newcommand{\cvsubitem}[2]{
+  \textit{#2} \hfill \textit{#1}
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\pagestyle{empty}
+
+\begin{document}
+
+% Header
+\begin{center}
+    {\Huge\bfseries Preslav Aleksandrov}\\[8pt]
+    \faEnvelope\ \href{mailto:pa511@cam.ac.uk}{pa511@cam.ac.uk} \quad
+    \faPhone\ +44-7401-005612 \quad
+    \faLinkedin\ \href{https://linkedin.com/in/preslav-aleksandrov}{linkedin.com/in/preslav-aleksandrov}\\
+    \faGithub\ \href{https://github.com/Helios113}{https://github.com/Helios113} \quad
+    \faGlobe\ \href{https://preslavaleksandrov.com}{preslavaleksandrov.com} \quad
+    \faGraduationCap\ \href{https://scholar.google.com/citations?user=d3mnwTkAAAAJ}{Google Scholar}
+\end{center}
+
+\vspace{-8pt}
+
+% Research Interests (critical for AI screening)
+\section*{Research Interests}
+Machine Learning | Deep Learning | Natural Language Processing | Computer Vision | Reinforcement Learning | AI Safety | Large Language Models | Generative AI | Multimodal Learning
+
+\vspace{-4pt}
+
+% Education
+\section*{Education}
+
+\cvitem{University of Cambridge}{2024 - Current}\\
+\cvsubitem{Cambridge, UK}{PhD in Computer Science, GPA: 3.9/4.0}
+\begin{itemize}[leftmargin=*, itemsep=1pt, parsep=0pt, topsep=2pt]
+    \item \textbf{Relevant Coursework:} Deep Learning, Machine Learning, Natural Language Processing, Computer Vision, Reinforcement Learning, Probabilistic Graphical Models, Advanced Algorithms, Statistical Learning Theory
+    \item \textbf{Honors:} Dean's List (all semesters), Research Excellence Award, AI Research Fellowship
+\end{itemize}
+
+
+\cvitem{University of Glasgow}{2024 - Current}\\
+\cvsubitem{Cambridge, UK}{MSc in Computer Science, GPA: 3.9/4.0}
+\begin{itemize}[leftmargin=*, itemsep=1pt, parsep=0pt, topsep=2pt]
+    \item \textbf{Relevant Coursework:} Deep Learning, Machine Learning, Natural Language Processing, Computer Vision, Reinforcement Learning, Probabilistic Graphical Models, Advanced Algorithms, Statistical Learning Theory
+    \item \textbf{Honors:} Dean's List (all semesters), Research Excellence Award, AI Research Fellowship
+\end{itemize}
+
+\vspace{2pt}
+
+% Research Experience
+\section*{Research Experience}
+
+\cvitem{Research Institution/Lab Name}{Month Year -- Present}\\
+\cvsubitem{City, State/Country}{Research Intern/Assistant | Advisor: Prof. Name}
+\begin{itemize}[leftmargin=*, itemsep=1pt, parsep=0pt, topsep=2pt]
+    \item Developed novel transformer architecture achieving 15\% improvement in BLEU score on WMT translation benchmark, reducing model parameters by 30\% while maintaining performance
+    \item Implemented and optimized distributed training pipeline using PyTorch and DeepSpeed, scaling to 128 GPUs with 85\% efficiency, reducing training time from 2 weeks to 3 days
+    \item Published first-author paper at NeurIPS/ICML/ICLR (specify conference) on efficient attention mechanisms for long-context language models with 100+ citations
+    \item Collaborated with 5-person research team, contributing 10,000+ lines of production-quality research code to open-source repository (3,000+ GitHub stars)
+\end{itemize}
+
+\vspace{4pt}
+
+\cvitem{Previous Research Lab/Company}{Month Year -- Month Year}\\
+\cvsubitem{City, State/Country}{Machine Learning Research Intern | Mentor: Dr. Name}
+\begin{itemize}[leftmargin=*, itemsep=1pt, parsep=0pt, topsep=2pt]
+    \item Designed and trained multimodal vision-language model achieving state-of-the-art results on 3 benchmark datasets (VQA, COCO Captioning, Visual Reasoning)
+    \item Conducted ablation studies analyzing attention patterns in vision transformers, identifying key architectural improvements adopted by 50+ follow-up papers
+    \item Co-authored workshop paper at CVPR/ECCV/ICCV on zero-shot transfer learning for image classification
+\end{itemize}
+
+\vspace{2pt}
+
+% Publications (critical for research positions)
+\section*{Publications}
+
+\textbf{First Author Publications:}
+\begin{itemize}[leftmargin=*, itemsep=2pt, parsep=0pt, topsep=2pt]
+    \item \textbf{Your Name}, Co-author Names. ``Descriptive Title About Your Research Contribution.'' \textit{NeurIPS/ICML/ICLR/AAAI}, Year. [\href{https://arxiv.org/}{arXiv}] [\href{https://github.com/}{code}]
+    \item \textbf{Your Name}, Co-author Names. ``Another Paper Title on Relevant AI Topic.'' \textit{Workshop at Major Conference}, Year. [\href{https://arxiv.org/}{arXiv}]
+\end{itemize}
+
+\textbf{Contributing Author Publications:}
+\begin{itemize}[leftmargin=*, itemsep=2pt, parsep=0pt, topsep=2pt]
+    \item Co-author Names, \textbf{Your Name}, et al. ``Paper Title Where You Made Significant Contributions.'' \textit{Conference Name}, Year.
+\end{itemize}
+
+\vspace{2pt}
+
+% Projects
+\section*{Technical Projects}
+
+\cvitem{Project Name: Descriptive AI/ML Focus}{Month Year -- Month Year}
+\begin{itemize}[leftmargin=*, itemsep=1pt, parsep=0pt, topsep=2pt]
+    \item Built end-to-end deep learning system for [specific task] using PyTorch/TensorFlow, achieving [specific metric] performance
+    \item Implemented novel [algorithm/architecture] based on recent research, demonstrating [percentage] improvement over baseline
+    \item Open-sourced implementation with comprehensive documentation, gaining 500+ GitHub stars and used by 10+ research groups
+    \item \textbf{Technologies:} PyTorch, Transformers, CUDA, Weights \& Biases, Docker, AWS/GCP
+\end{itemize}
+
+\vspace{4pt}
+
+\cvitem{Another Significant Project Name}{Month Year -- Month Year}
+\begin{itemize}[leftmargin=*, itemsep=1pt, parsep=0pt, topsep=2pt]
+    \item Developed [specific AI system] processing [data scale] with [performance metric], deployed in production serving 10,000+ users
+    \item Optimized inference latency from [X]ms to [Y]ms through model quantization, pruning, and efficient deployment strategies
+    \item \textbf{Technologies:} Python, JAX/Flax, Ray, Kubernetes, MLflow, TensorBoard
+\end{itemize}
+
+\vspace{2pt}
+
+% Skills (optimized for ATS/AI screening)
+\section*{Technical Skills}
+
+\textbf{Programming Languages:} Python (expert), C++ (proficient), Julia, R, CUDA, SQL\\
+\textbf{ML Frameworks:} PyTorch, TensorFlow, JAX, Hugging Face Transformers, scikit-learn, XGBoost\\
+\textbf{AI/ML Specializations:} Deep Learning, Natural Language Processing, Computer Vision, Reinforcement Learning, Generative Models, Large Language Models, Diffusion Models, Graph Neural Networks\\
+\textbf{Tools \& Infrastructure:} Git, Docker, Kubernetes, AWS/GCP/Azure, Weights \& Biases, MLflow, Ray, DeepSpeed, SLURM\\
+\textbf{Libraries:} NumPy, Pandas, SciPy, Matplotlib, OpenCV, NLTK, spaCy, LangChain\\
+\textbf{Research Skills:} Experimental design, statistical analysis, technical writing, literature review, reproducible research
+
+\vspace{2pt}
+
+% Awards & Honors
+\section*{Awards \& Honors}
+
+\begin{itemize}[leftmargin=*, itemsep=1pt, parsep=0pt, topsep=2pt]
+    \item Best Paper Award, [Conference Name], Year -- Recognized for outstanding research contribution
+    \item Research Fellowship, [Institution], Year -- Competitive fellowship awarded to top 5\% of applicants
+    \item Kaggle Competition Winner/Grandmaster, [Competition Name], Year -- Ranked 1st/Top 1\% among 5,000+ teams
+    \item Outstanding Student Award in AI/ML, [Institution], Year
+\end{itemize}
+
+\vspace{2pt}
+
+% Teaching & Mentorship
+\section*{Teaching \& Mentorship}
+
+\cvitem{Teaching Assistant -- Course Name (ML/DL/AI)}{Month Year -- Month Year}
+\begin{itemize}[leftmargin=*, itemsep=1pt, parsep=0pt, topsep=2pt]
+    \item Led weekly discussion sections for 50+ students, achieving 4.8/5.0 teaching evaluation
+    \item Developed course materials and programming assignments on neural networks, CNNs, RNNs, and transformers
+    \item Mentored 3 undergraduate research students, resulting in 2 workshop papers
+\end{itemize}
+
+\vspace{2pt}
+
+% Additional sections (optional)
+\section*{Service \& Leadership}
+
+\begin{itemize}[leftmargin=*, itemsep=1pt, parsep=0pt, topsep=2pt]
+    \item Reviewer for [Conference Names: NeurIPS, ICML, ICLR, etc.], Year
+    \item Organizer, AI Research Reading Group at University, Year -- Present
+    \item Volunteer, AI for Social Good Initiative, contributing ML expertise to non-profit projects
+\end{itemize}
+
+\end{document}

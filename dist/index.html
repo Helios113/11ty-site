@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" style="height: 100%;">
+<html lang="en" style="height: 100%; font-size: 16px;">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-92JTV1EQK3"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -31,43 +31,109 @@
   <meta name="twitter:image" content="/path/to/your/image.jpg">
 
 <style>
+a:hover {
+  color: #1d4ed8;
+}
+nav ul a:hover {
+  color: #1f1f1f;
+}
 @media (max-width: 768px) {
   body {
-    padding: 1rem;
+    padding: 1.5rem 1rem;
+  }
+
+  h1 {
+    font-size: 1.875rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  nav ul {
+    gap: 1rem;
   }
 
   pre {
-    font-size: 0.9em;
+    font-size: 0.8125rem;
     padding: 1rem;
   }
 }
-#links {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  margin: 0;
-  padding: 0;
-  list-style: none;
+@media (max-width: 480px) {
+  body {
+    padding: 1rem 0.75rem;
+  }
+
+  h1 {
+    font-size: 1.625rem;
+  }
+
+  h2 {
+    font-size: 1.375rem;
+  }
 }
-#links ul {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  padding: 0;
-  margin-top: 2rem;
-  list-style: none;
+.blog-index .post-card:hover {
+  background: #f9fafb;
+  border-color: #e5e7eb;
+  transform: translateY(-1px);
+}
+@media (max-width: 768px) {
+  article.post .post-header h1 {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 480px) {
+  article.post .post-header h1 {
+    font-size: 1.75rem;
+  }
+
+  article.post .post-header .post-description {
+    font-size: 1rem;
+  }
+}
+.cv-container .cv-download-section .cv-download-btn:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+.cv-container .cv-download-section .cv-download-btn:active {
+  transform: translateY(0);
+}
+.cv-container .cv-header .contact-info .contact-item a:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+@media (max-width: 768px) {
+  .cv-container .cv-header h1 {
+    font-size: 2rem;
+  }
+
+  .cv-container .cv-header .contact-info {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .cv-container .cv-header .contact-info .contact-item {
+    justify-content: center;
+  }
+
+  .cv-container .cv-section .cv-item .cv-item-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
 }
 </style>
 </head>
-<body style="font-family: 'Press Start 2P', 'Orbitron', monospace; font-size: 0.85rem; line-height: 1.8; background: #fff; color: #000; max-width: 720px; margin-left: auto; margin-right: auto; padding: 1.5rem;">
-  <div id="contents" style="display: flex; flex-direction: column; min-height: calc(100vh - 3rem); height: 100%;">
+<body style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 1rem; line-height: 1.6; background: #ffffff; color: #1f1f1f; max-width: 760px; margin: 0 auto; padding: 2rem 1.5rem; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;">
+  <div id="contents" style="display: flex; flex-direction: column; min-height: 100vh;">
     <!-- Main navigation -->
     <header>
-      <nav aria-labelledby="main-navigation" style="margin-bottom: 2rem; border-bottom: 1px solid #ccc; height: 3rem;">
-        <h2 id="main-navigation" class="sr-only" style="font-weight: normal; margin-top: 1.5rem; position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; border: 0; clip: rect(0, 0, 0, 0); overflow: hidden;">Main Navigation</h2> <!-- Screen reader-only heading for navigation -->
+      <nav aria-labelledby="main-navigation" style="margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid #e5e7eb;">
+        <h2 id="main-navigation" class="sr-only" style="font-size: 1.75rem; font-weight: 600; line-height: 1.3; letter-spacing: -0.01em; color: #1f1f1f; position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; border: 0; clip: rect(0, 0, 0, 0); overflow: hidden;">Main Navigation</h2> <!-- Screen reader-only heading for navigation -->
         
 
-  <ul role="list" style="margin-bottom: 1.5rem; padding-left: 2em; margin: 0; display: flex; gap: 1.5rem; list-style: none; padding: 0;">
+  <ul role="list" style="padding-left: 2rem; color: #1f1f1f; list-style-type: disc; display: flex; gap: 2rem; list-style: none; padding: 0; margin: 0; flex-wrap: wrap;">
     <!-- Check if "Home" link is missing -->
     
     
@@ -77,37 +143,111 @@
     
       
     
+      
+    
 
     
-      <li style="margin: 0; border-bottom: none; padding: 0;">
-        <a href="/" aria-current="page" style="color: #00f; font-weight: bold; text-decoration: underline;">
+      <li style="margin-bottom: 0.75rem; line-height: 1.6; border-bottom: none; padding: 0; margin: 0;">
+        <a href="/" aria-current="page" style="text-decoration: none; font-size: 0.9375rem; transition: color 0.15s ease; font-weight: 500; color: #1f1f1f;">
           Home
         </a>
       </li>
     
 
     
-      <li style="margin: 0; border-bottom: none; padding: 0;">
-        <a href="/CV/" title="CV" style="color: #00f; text-decoration: none;">
+    
+    
+    
+    
+      
+    
+      
+    
+      
+        
+      
+    
+      
+    
+    
+    
+    
+      
+    
+      
+    
+      
+    
+      
+        
+      
+    
+    
+    
+    
+      
+        
+      
+    
+      
+    
+      
+    
+      
+    
+    
+    
+    
+      
+    
+      
+        
+      
+    
+      
+    
+      
+    
+    
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+    
+      <li style="margin-bottom: 0.75rem; line-height: 1.6; border-bottom: none; padding: 0; margin: 0;">
+        <a href="/blog/" title="Blog" style="text-decoration: none; color: #6b7280; font-size: 0.9375rem; font-weight: 500; transition: color 0.15s ease;">
+          Blog
+        </a>
+      </li>
+    
+      <li style="margin-bottom: 0.75rem; line-height: 1.6; border-bottom: none; padding: 0; margin: 0;">
+        <a href="/CV/" title="CV" style="text-decoration: none; color: #6b7280; font-size: 0.9375rem; font-weight: 500; transition: color 0.15s ease;">
           CV
         </a>
       </li>
     
-      <li style="margin: 0; border-bottom: none; padding: 0;">
-        <a href="/projects/" title="Projects" style="color: #00f; text-decoration: none;">
+      <li style="margin-bottom: 0.75rem; line-height: 1.6; border-bottom: none; padding: 0; margin: 0;">
+        <a href="/projects/" title="Projects" style="text-decoration: none; color: #6b7280; font-size: 0.9375rem; font-weight: 500; transition: color 0.15s ease;">
           Projects
         </a>
       </li>
     
-      <li style="margin: 0; border-bottom: none; padding: 0;">
-        <a href="/bib/" title="Reading" style="color: #00f; text-decoration: none;">
+      <li style="margin-bottom: 0.75rem; line-height: 1.6; border-bottom: none; padding: 0; margin: 0;">
+        <a href="/bib/" title="Reading" style="text-decoration: none; color: #6b7280; font-size: 0.9375rem; font-weight: 500; transition: color 0.15s ease;">
           Reading
         </a>
       </li>
     
 
-    <li style="margin: 0; border-bottom: none; padding: 0;">
-      <a href="https://github.com/Helios113" target="_blank" rel="noopener noreferrer" style="color: #00f; text-decoration: none;">
+    <li style="margin-bottom: 0.75rem; line-height: 1.6; border-bottom: none; padding: 0; margin: 0;">
+      <a href="https://github.com/Helios113" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #6b7280; font-size: 0.9375rem; font-weight: 500; transition: color 0.15s ease;">
         GitHub
       </a>
     </li>
@@ -119,29 +259,29 @@
     <main id="main" style="flex: 1 0 auto;">
       
 <main style="flex: 1 0 auto;">
-  <article>
+  <article style="max-width: 100%;">
     <img src="/IMG_1501.webp" alt="Profile picture" style="width: 150px; height: 150px; object-fit: cover; float: left; margin: 0 1.5rem 1rem 0;">
-<p style="margin-bottom: 1.5rem;"><strong>Preslav Aleksandrov</strong></p>
-<p style="margin-bottom: 1.5rem;">I'm a PhD student in Computer Science at the University of Cambridge working on the fundamental architectures that will power next-generation ML systems.</p>
+<p style="margin-bottom: 1.5rem; color: #1f1f1f;"><strong style="font-weight: 600; color: #1f1f1f;">Preslav Aleksandrov</strong></p>
+<p style="margin-bottom: 1.5rem; color: #1f1f1f;">I'm a PhD student in Computer Science at the University of Cambridge working on the fundamental architectures that will power next-generation ML systems.</p>
 <div style="clear: both;"></div>
-<h2 style="font-weight: normal; margin-top: 1.5rem;">What I Do</h2>
-<p style="margin-bottom: 1.5rem;">I optimize LLM throughput and investigate step-change improvements in machine learning. My research focuses on making models faster, more scalable, and practically deployable—with all claims backed by rigorous evaluation and open code.</p>
-<p style="margin-bottom: 1.5rem;"><strong>Current focus:</strong> Architectural innovations for the next generation of foundation models.</p>
-<h2 style="font-weight: normal; margin-top: 1.5rem;">Why It Matters</h2>
-<p style="margin-bottom: 1.5rem;">The next wave of AI won't just be about bigger models—it will be about fundamentally better architectures. I'm building the backbone technologies that make future ML systems feasible at scale.</p>
-<h2 style="font-weight: normal; margin-top: 1.5rem;">Research Philosophy</h2>
-<ul style="margin-bottom: 1.5rem; padding-left: 2em; margin: 0;">
-<li style="border-bottom: 1px solid #ccc; padding: 0.75em 0; margin: 0;"><strong>Fundamental:</strong> Tackle core problems, not incremental tweaks</li>
-<li style="border-bottom: 1px solid #ccc; padding: 0.75em 0; margin: 0;"><strong>Scalable:</strong> Solutions that work at real-world scale</li>
-<li style="border-bottom: 1px solid #ccc; padding: 0.75em 0; margin: 0;"><strong>Realistic:</strong> Rigorous evaluation, reproducible results</li>
-<li style="padding: 0.75em 0; margin: 0; border-bottom: none;"><strong>Open:</strong> All research comes with working code</li>
+<h2 style="font-size: 1.75rem; font-weight: 600; line-height: 1.3; margin: 2rem 0 1rem; letter-spacing: -0.01em; color: #1f1f1f;">What I Do</h2>
+<p style="margin-bottom: 1.5rem; color: #1f1f1f;">I optimize LLM throughput and investigate step-change improvements in machine learning. My research focuses on making models faster, more scalable, and practically deployable—with all claims backed by rigorous evaluation and open code.</p>
+<p style="margin-bottom: 1.5rem; color: #1f1f1f;"><strong style="font-weight: 600; color: #1f1f1f;">Current focus:</strong> Architectural innovations for the next generation of foundation models.</p>
+<h2 style="font-size: 1.75rem; font-weight: 600; line-height: 1.3; margin: 2rem 0 1rem; letter-spacing: -0.01em; color: #1f1f1f;">Why It Matters</h2>
+<p style="margin-bottom: 1.5rem; color: #1f1f1f;">The next wave of AI won't just be about bigger models—it will be about fundamentally better architectures. I'm building the backbone technologies that make future ML systems feasible at scale.</p>
+<h2 style="font-size: 1.75rem; font-weight: 600; line-height: 1.3; margin: 2rem 0 1rem; letter-spacing: -0.01em; color: #1f1f1f;">Research Philosophy</h2>
+<ul style="margin: 1.5rem 0; padding-left: 2rem; color: #1f1f1f; list-style-type: disc;">
+<li style="margin-bottom: 0.75rem; line-height: 1.6; border-bottom: none; padding: 0;"><strong style="font-weight: 600; color: #1f1f1f;">Fundamental:</strong> Tackle core problems, not incremental tweaks</li>
+<li style="margin-bottom: 0.75rem; line-height: 1.6; border-bottom: none; padding: 0;"><strong style="font-weight: 600; color: #1f1f1f;">Scalable:</strong> Solutions that work at real-world scale</li>
+<li style="margin-bottom: 0.75rem; line-height: 1.6; border-bottom: none; padding: 0;"><strong style="font-weight: 600; color: #1f1f1f;">Realistic:</strong> Rigorous evaluation, reproducible results</li>
+<li style="margin-bottom: 0.75rem; line-height: 1.6; border-bottom: none; padding: 0;"><strong style="font-weight: 600; color: #1f1f1f;">Open:</strong> All research comes with working code</li>
 </ul>
-<h2 style="font-weight: normal; margin-top: 1.5rem;">Let's Work Together</h2>
-<p style="margin-bottom: 1.5rem;">I'm interested in:</p>
-<ul style="margin-bottom: 1.5rem; padding-left: 2em; margin: 0;">
-<li style="border-bottom: 1px solid #ccc; padding: 0.75em 0; margin: 0;"><strong>Research collaborations</strong> on next-gen architectures and LLM optimization</li>
-<li style="border-bottom: 1px solid #ccc; padding: 0.75em 0; margin: 0;"><strong>Industry opportunities</strong> where fundamental ML research meets production systems</li>
-<li style="padding: 0.75em 0; margin: 0; border-bottom: none;"><strong>Startup funding</strong> for ventures building the infrastructure layer of future AI</li>
+<h2 style="font-size: 1.75rem; font-weight: 600; line-height: 1.3; margin: 2rem 0 1rem; letter-spacing: -0.01em; color: #1f1f1f;">Let's Work Together</h2>
+<p style="margin-bottom: 1.5rem; color: #1f1f1f;">I'm interested in:</p>
+<ul style="margin: 1.5rem 0; padding-left: 2rem; color: #1f1f1f; list-style-type: disc;">
+<li style="margin-bottom: 0.75rem; line-height: 1.6; border-bottom: none; padding: 0;"><strong style="font-weight: 600; color: #1f1f1f;">Research collaborations</strong> on next-gen architectures and LLM optimization</li>
+<li style="margin-bottom: 0.75rem; line-height: 1.6; border-bottom: none; padding: 0;"><strong style="font-weight: 600; color: #1f1f1f;">Industry opportunities</strong> where fundamental ML research meets production systems</li>
+<li style="margin-bottom: 0.75rem; line-height: 1.6; border-bottom: none; padding: 0;"><strong style="font-weight: 600; color: #1f1f1f;">Startup funding</strong> for ventures building the infrastructure layer of future AI</li>
 </ul>
 
   </article>

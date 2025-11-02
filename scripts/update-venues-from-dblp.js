@@ -6,14 +6,52 @@
  * This script reads bibliography.bib, queries DBLP for each paper,
  * and updates the venue information (booktitle/journal) with
  * standardized conference/journal names from DBLP.
+ * 
+ * Optimized: Only runs if bibliography.bib has changed since last run.
  */
 
 const fs = require('fs');
 const path = require('path');
 const https = require('https');
+const crypto = require('crypto');
 
 const BIB_PATH = path.resolve(__dirname, '../src/assets/bibliography.bib');
+const HASH_FILE = path.resolve(__dirname, '../.bib-hash');
 const DBLP_API_BASE = 'https://dblp.org/search/publ/api';
+
+/**
+ * Calculate MD5 hash of file contents
+ */
+function getFileHash(filePath) {
+  const content = fs.readFileSync(filePath, 'utf8');
+  return crypto.createHash('md5').update(content).digest('hex');
+}
+
+/**
+ * Check if bibliography file has changed since last run
+ */
+function hasBibChanged() {
+  if (!fs.existsSync(BIB_PATH)) {
+    return true;
+  }
+
+  const currentHash = getFileHash(BIB_PATH);
+
+  // If no previous hash exists, file is considered changed
+  if (!fs.existsSync(HASH_FILE)) {
+    fs.writeFileSync(HASH_FILE, currentHash, 'utf8');
+    return true;
+  }
+
+  const previousHash = fs.readFileSync(HASH_FILE, 'utf8').trim();
+
+  if (currentHash !== previousHash) {
+    fs.writeFileSync(HASH_FILE, currentHash, 'utf8');
+    return true;
+  }
+
+  return false;
+}
 
 /**
  * Query DBLP API for a paper by title
@@ -156,12 +194,20 @@ function sleep(ms) {
  * Main function
  */
 async function main() {
-  console.log('Reading bibliography file...');
+  console.log('Checking bibliography file...');
   
   if (!fs.existsSync(BIB_PATH)) {
     console.error(`Error: Bibliography file not found at ${BIB_PATH}`);
     process.exit(1);
   }
+  
+  // Check if bibliography has changed since last run
+  if (!hasBibChanged()) {
+    console.log('✓ Bibliography unchanged, skipping DBLP update');
+    return;
+  }
+  
+  console.log('Bibliography changed, updating from DBLP...\n');
   
   let bibContent = fs.readFileSync(BIB_PATH, 'utf8');
   const entries = parseBibFile(bibContent);
