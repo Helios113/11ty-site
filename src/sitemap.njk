@@ -10,7 +10,7 @@ eleventyExcludeFromCollections: true
     <loc>{{ meta.siteUrl }}{{ page.url }}</loc>
     <lastmod>{{ build.timestamp }}</lastmod>
     <changefreq>{% if page.url == '/' %}weekly{% elif '/blog/' in page.url %}monthly{% else %}monthly{% endif %}</changefreq>
-    <priority>{% if page.url == '/' %}1.0{% elif '/CV/' in page.url %}0.9{% elif '/projects/' in page.url %}0.8{% elif '/blog/' in page.url %}0.7{% else %}0.6{% endif %}</priority>
+    <priority>{% if page.url == '/' %}1.0{% elif '/cv/' in page.url %}0.9{% elif '/projects/' in page.url %}0.8{% elif '/blog/' in page.url %}0.7{% else %}0.6{% endif %}</priority>
   </url>
 {%- endif %}
 {%- endfor %}
