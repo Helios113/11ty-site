@@ -1,5 +1,8 @@
 ---
-title: CV
+title: "CV - Preslav Aleksandrov | PhD Computer Science Cambridge"
+navTitle: "CV"
+description: "Academic CV of Preslav Aleksandrov, PhD Computer Science student at Cambridge University. Research experience in machine learning, AI systems, and foundational model architectures."
+keywords: "Preslav Aleksandrov CV, Academic CV Computer Science, PhD Student Cambridge, Machine Learning Research CV, AI Research Experience, Cambridge University Student"
 layout: page.njk
 eleventyNavigation:
   order: 2
@@ -8,23 +11,28 @@ eleventyNavigation:
 <div class="cv-container">
   <div class="cv-download-section">
     <a href="/assets/cv.pdf" class="cv-download-btn" target="_blank" download>
-      📄 Download as PDF
+      <i class="fas fa-file-pdf"></i> Download as PDF
     </a>
   </div>
 <header class="cv-header">
   <h1>Preslav Aleksandrov</h1>
   <div class="contact-info">
-    <div class="contact-item"><span class="icon">✉️</span><a href="mailto:pa511@cam.ac.uk">pa511@cam.ac.uk</a></div>
-    <div class="contact-item"><span class="icon">📱</span>+44-7401-005612</div>
-    <div class="contact-item"><span class="icon">💼</span><a href="https://linkedin.com/in/preslav-aleksandrov" target="_blank">linkedin.com/in/preslav-aleksandrov</a></div>
-    <div class="contact-item"><span class="icon">🐙</span><a href="https://github.com/Helios113" target="_blank">https://github.com/Helios113</a></div>
-    <div class="contact-item"><span class="icon">🌐</span><a href="https://preslavaleksandrov.com" target="_blank">preslavaleksandrov.com</a></div>
-    <div class="contact-item"><span class="icon">🎓</span><a href="https://scholar.google.com/citations?user=d3mnwTkAAAAJ" target="_blank">Google Scholar</a></div>
+    <div class="contact-item"><span class="icon"><i class="fas fa-envelope"></i></span><a href="mailto:pa511@cam.ac.uk">pa511@cam.ac.uk</a></div>
+    <div class="contact-item"><span class="icon"><i class="fas fa-phone"></i></span>+44-7401-005612</div>
+    <div class="contact-item"><span class="icon"><i class="fab fa-linkedin"></i></span><a href="https://linkedin.com/in/preslav-aleksandrov" target="_blank">linkedin.com/in/preslav-aleksandrov</a></div>
+    <div class="contact-item"><span class="icon"><i class="fab fa-github"></i></span><a href="https://github.com/Helios113" target="_blank">https://github.com/Helios113</a></div>
+    <div class="contact-item"><span class="icon"><i class="fas fa-globe"></i></span><a href="https://preslavaleksandrov.com" target="_blank">preslavaleksandrov.com</a></div>
+    <div class="contact-item"><span class="icon"><i class="fas fa-graduation-cap"></i></span><a href="https://scholar.google.com/citations?user=d3mnwTkAAAAJ" target="_blank">Google Scholar</a></div>
   </div>
 </header>
 
 <section class="cv-section">
   <h2>Abstract</h2>
+  <p>My research focuses on creating new foundational model architectures which are more parameter and data efficient, thus they require much less compute for training and inference The reduced parameter size leads to a higher throughput and lower latency and enables more capable edge model deployments.</p>
+  <p>I specifically work on dynamic iterative transformer models which allow test time compute scaling and circuit composition, as I believe that future of foundational models, similar to biological brains, will have a dynamic compute path.</p>
+  <div class="keywords">
+    <p><strong>Keywords:</strong> Machine Learning; Deep Learning; Natural Language Processing; Computer Vision; Reinforcement Learning; AI Safety; Large Language Models; Generative AI; Multimodal Learning</p>
+  </div>
 </section>
 
 <section class="cv-section">

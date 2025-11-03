@@ -1,6 +1,14 @@
 {
-  "siteName": "Preslav's Webpage",
+  "siteName": "Preslav Aleksandrov - PhD Computer Science Cambridge",
   "authorName": "Preslav Aleksandrov",
-  "siteDescription": "Personal website of Preslav Aleksandrov, a PhD student in Computer Science at the University of Cambridge.",
-  "github": "https://github.com/helios113"
+  "siteDescription": "PhD Computer Science student at Cambridge University specializing in foundational model architectures, machine learning, and AI research. Expert in transformer models, deep learning, and parameter-efficient training.",
+  "siteUrl": "https://preslavaleksandrov.com",
+  "github": "https://github.com/helios113",
+  "linkedin": "https://linkedin.com/in/preslav-aleksandrov",
+  "scholar": "https://scholar.google.com/citations?user=d3mnwTkAAAAJ",
+  "keywords": {
+    "primary": ["PhD Computer Science", "Machine Learning", "Cambridge University", "AI Research", "Deep Learning"],
+    "secondary": ["Transformer Architecture", "Foundational Models", "Natural Language Processing", "Computer Vision", "Parameter Efficient Training", "Dynamic Compute", "Test Time Scaling"],
+    "academic": ["Neural Networks", "Artificial Intelligence", "Research Publication", "Academic CV", "PhD Student", "Cambridge AI", "ML Systems"]
+  }
 }

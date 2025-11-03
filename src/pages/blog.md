@@ -1,5 +1,8 @@
 ---
-title: Blog
+title: "Blog - AI Research & Machine Learning Insights | Preslav Aleksandrov"
+navTitle: "Blog"
+description: "Blog by Preslav Aleksandrov, PhD Computer Science student at Cambridge. Read insights on AI research, machine learning, transformer architectures, and academic life."
+keywords: "AI Research Blog, Machine Learning Blog, PhD Student Blog, Computer Science Research, Cambridge AI Blog, Deep Learning Insights, Academic Blog"
 layout: page.njk
 eleventyNavigation:
   order: 1

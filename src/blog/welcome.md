@@ -1,7 +1,9 @@
 ---
-title: Welcome to My Blog
+title: "Welcome to My AI Research Blog - Insights from Cambridge PhD"
 date: 2025-10-31
-description: Thoughts on ML research, optimization techniques, and the future of language models.
+description: "First blog post by Preslav Aleksandrov, PhD Computer Science student at Cambridge. Sharing insights on ML research, LLM optimization, and foundational model architectures."
+keywords: "AI Research Blog, Machine Learning Blog, Cambridge PhD Blog, LLM Optimization, Transformer Architecture, ML Research Insights"
+author: "Preslav Aleksandrov"
 ---
 
 Welcome! I'm starting this blog to share insights from my research at Cambridge on fundamental ML architectures and optimization.

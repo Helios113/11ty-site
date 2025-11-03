@@ -1,0 +1,22 @@
+{
+  "name": "Preslav Aleksandrov - PhD Computer Science Cambridge",
+  "short_name": "Preslav Aleksandrov",
+  "description": "PhD Computer Science student at Cambridge University specializing in foundational model architectures, machine learning, and AI research.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "orientation": "portrait-primary",
+  "lang": "en-GB",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["education", "academic", "research", "technology"],
+  "screenshots": []
+}

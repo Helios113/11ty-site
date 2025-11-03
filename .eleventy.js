@@ -1,9 +1,23 @@
 const juice = require("juice");
 const fs = require("fs");
 const path = require("path");
-const bibtexParse = require("bibtex-parse-js");
+const bibtexParse = require("bibtex-parse");
 
 module.exports = function (eleventyConfig) {
+  
+  // SEO: Generate XML Sitemap
+  eleventyConfig.addCollection("sitemap", function(collectionApi) {
+    return collectionApi.getAll().filter(item => {
+      // Only include pages that should be in sitemap
+      return item.data.permalink !== false && !item.data.draft;
+    });
+  });
+  
+  // SEO: Add sitemap template
+  eleventyConfig.addGlobalData("build", {
+    timestamp: new Date().toISOString(),
+    env: process.env.NODE_ENV || 'development'
+  });
   // Filter to abbreviate author list (first author et al.)
   eleventyConfig.addFilter("abbreviateAuthors", function(authorString) {
     if (!authorString) return "";
@@ -134,25 +148,24 @@ module.exports = function (eleventyConfig) {
       }
 
       const bibContent = fs.readFileSync(bibPath, "utf8");
-      const entries = bibtexParse.toJSON(bibContent);
+      const entries = bibtexParse.entries(bibContent);
 
       if (!Array.isArray(entries)) {
         throw new Error("Parsed BibTeX content is not an array.");
       }
 
       const parsed = entries.map((entry) => {
-        const fields = entry.entryTags || {};
         return {
-          type: entry.entryType,
-          id: entry.citationKey,
-          title: fields.title,
-          year: parseInt(fields.year, 10),
-          author: fields.author,
-          journal: fields.journal,
-          booktitle: fields.booktitle,
-          url: fields.url,
-          note: fields.note,
-          section: fields.section || "Other" // <--- fallback here
+          type: entry.type,
+          id: entry.key,
+          title: entry.TITLE,
+          year: parseInt(entry.YEAR, 10),
+          author: entry.AUTHOR,
+          journal: entry.JOURNAL,
+          booktitle: entry.BOOKTITLE,
+          url: entry.URL,
+          note: entry.NOTE,
+          section: entry.SECTION || "Other" // <--- fallback here
         };
       });
 
@@ -171,6 +184,10 @@ module.exports = function (eleventyConfig) {
   // Copy favicon and images to output
   eleventyConfig.addPassthroughCopy("src/favicon.svg");
   eleventyConfig.addPassthroughCopy("src/IMG_1501.webp");
+  
+  // Copy SEO files to root
+  eleventyConfig.addPassthroughCopy("src/robots.txt");
+  eleventyConfig.addPassthroughCopy("src/site.webmanifest");
 
   return {
     dir: {

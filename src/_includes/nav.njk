@@ -13,7 +13,8 @@
       <li>
         <a
           href="/"
-          {% if currentUrl == '/' %}aria-current="page"{% endif %}>
+          {% if currentUrl == '/' %}aria-current="page"{% endif %}
+          title="Home">
           Home
         </a>
       </li>
@@ -62,8 +63,8 @@
         <a
           href="{{ p.url }}"
           {% if currentUrl == p.url %}aria-current="page"{% endif %}
-          title="{{ p.data.title }}">
-          {{ p.data.title }}
+          title="{{ p.data.navTitle or p.data.title }}">
+          {{ p.data.navTitle or p.data.title }}
         </a>
       </li>
     {% endfor %}

@@ -1,5 +1,8 @@
 ---
-title: Home
+title: "Preslav Aleksandrov - PhD Computer Science Student | Cambridge University AI Research"
+navTitle: "Home"
+description: "PhD Computer Science student at Cambridge University specializing in foundational model architectures, machine learning systems, and parameter-efficient AI training. Research in transformer models and dynamic compute scaling."
+keywords: "Preslav Aleksandrov, PhD Computer Science Cambridge, Machine Learning Research, AI PhD Student, Transformer Architecture, Foundational Models, Cambridge University, Deep Learning Research, ML Systems"
 layout: page.njk
 ---
 

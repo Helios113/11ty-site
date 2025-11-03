@@ -41,12 +41,12 @@ function parseLatexCV(texContent) {
   html += `  <h1>${name}</h1>\n`;
   html += `  <div class="contact-info">\n`;
   
-  if (emailMatch) html += `    <div class="contact-item"><span class="icon">✉️</span><a href="mailto:${emailMatch[1]}">${emailMatch[1]}</a></div>\n`;
-  if (phoneMatch) html += `    <div class="contact-item"><span class="icon">📱</span>${phoneMatch[1].replace(/\\quad.*/, '').trim()}</div>\n`;
-  if (linkedinMatch) html += `    <div class="contact-item"><span class="icon">💼</span><a href="${linkedinMatch[1]}" target="_blank">${linkedinMatch[2]}</a></div>\n`;
-  if (githubMatch) html += `    <div class="contact-item"><span class="icon">🐙</span><a href="${githubMatch[1]}" target="_blank">${githubMatch[2]}</a></div>\n`;
-  if (websiteMatch) html += `    <div class="contact-item"><span class="icon">🌐</span><a href="${websiteMatch[1]}" target="_blank">${websiteMatch[2]}</a></div>\n`;
-  if (scholarMatch) html += `    <div class="contact-item"><span class="icon">🎓</span><a href="${scholarMatch[1]}" target="_blank">${scholarMatch[2]}</a></div>\n`;
+  if (emailMatch) html += `    <div class="contact-item"><span class="icon"><i class="fas fa-envelope"></i></span><a href="mailto:${emailMatch[1]}">${emailMatch[1]}</a></div>\n`;
+  if (phoneMatch) html += `    <div class="contact-item"><span class="icon"><i class="fas fa-phone"></i></span>${phoneMatch[1].replace(/\\quad.*/, '').trim()}</div>\n`;
+  if (linkedinMatch) html += `    <div class="contact-item"><span class="icon"><i class="fab fa-linkedin"></i></span><a href="${linkedinMatch[1]}" target="_blank">${linkedinMatch[2]}</a></div>\n`;
+  if (githubMatch) html += `    <div class="contact-item"><span class="icon"><i class="fab fa-github"></i></span><a href="${githubMatch[1]}" target="_blank">${githubMatch[2]}</a></div>\n`;
+  if (websiteMatch) html += `    <div class="contact-item"><span class="icon"><i class="fas fa-globe"></i></span><a href="${websiteMatch[1]}" target="_blank">${websiteMatch[2]}</a></div>\n`;
+  if (scholarMatch) html += `    <div class="contact-item"><span class="icon"><i class="fas fa-graduation-cap"></i></span><a href="${scholarMatch[1]}" target="_blank">${scholarMatch[2]}</a></div>\n`;
   
   html += `  </div>\n`;
   html += `</header>\n\n`;
@@ -67,6 +67,64 @@ function parseLatexCV(texContent) {
       if (content) {
         const interests = content[1].replace(/\n/g, ' ').trim();
         html += `  <p class="research-interests">${interests}</p>\n`;
+      }
+    } else if (sectionTitle === 'Abstract') {
+      // Handle abstract as paragraphs and include keywords
+      const content = section.match(/\}(.+?)(?=\\vspace|\\section|\$)/s);
+      if (content) {
+        const fullContent = content[1];
+        
+        // Extract keywords if present
+        const keywordsMatch = fullContent.match(/\\noindent\\textbf\{Keywords:\}\s*\\small\s*(.+?)\\normalsize/s);
+        let keywordsText = '';
+        if (keywordsMatch) {
+          keywordsText = keywordsMatch[1].trim();
+        }
+        
+        // Extract abstract text (everything before keywords)
+        const abstractContent = keywordsMatch ? 
+          fullContent.substring(0, fullContent.indexOf('\\noindent\\textbf{Keywords:}')) : 
+          fullContent;
+        
+        const abstractText = abstractContent
+          .split('\n')
+          .map(line => line.trim())
+          .filter(line => line.length > 0 && !line.startsWith('%'))
+          .join(' ')
+          .trim();
+        
+        if (abstractText) {
+          // Split into sentences and group into paragraphs
+          const sentences = abstractText.split(/\.\s+/);
+          let currentParagraph = '';
+          
+          sentences.forEach((sentence, index) => {
+            if (sentence.trim()) {
+              currentParagraph += sentence.trim();
+              if (index < sentences.length - 1) {
+                currentParagraph += '. ';
+              }
+              
+              // Start new paragraph after certain length or at logical breaks
+              if (currentParagraph.length > 200 || sentence.includes('I specifically work on')) {
+                html += `  <p>${cleanLatexText(currentParagraph)}</p>\n`;
+                currentParagraph = '';
+              }
+            }
+          });
+          
+          // Add remaining content as final paragraph
+          if (currentParagraph.trim()) {
+            html += `  <p>${cleanLatexText(currentParagraph)}</p>\n`;
+          }
+        }
+        
+        // Add keywords if found
+        if (keywordsText) {
+          html += `  <div class="keywords">\n`;
+          html += `    <p><strong>Keywords:</strong> ${cleanLatexText(keywordsText)}</p>\n`;
+          html += `  </div>\n`;
+        }
       }
     } else {
       // Parse CV items
@@ -251,7 +309,7 @@ eleventyNavigation:
 ---
 
 <div class="cv-container">
-  ${pdfCompiled ? '<div class="cv-download-section">\n    <a href="/assets/cv.pdf" class="cv-download-btn" target="_blank" download>\n      📄 Download as PDF\n    </a>\n  </div>' : ''}
+  ${pdfCompiled ? '<div class="cv-download-section">\n    <a href="/assets/cv.pdf" class="cv-download-btn" target="_blank" download>\n      <i class="fas fa-file-pdf"></i> Download as PDF\n    </a>\n  </div>' : ''}
 ${htmlContent}</div>
 `;
 
